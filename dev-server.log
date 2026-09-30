@@ -1,0 +1,247 @@
+
+> dev
+> node scripts/with-app-env.mjs vite dev --host 0.0.0.0 --port 8080
+
+(node:29528) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+  [32m[1mVITE[22m v8.3.1[39m  [2mready in [0m[1m3128[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m8080[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.56.1:[1m8080[22m/[39m  [2mEthernet 4[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.16.50.88:[1m8080[22m/[39m  [2mEthernet[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.0.1:[1m8080[22m/[39m   [2mvEthernet (WSL (Hyp…[22m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[2m5:42:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m5:42:52 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m connected.
+[2m5:53:12 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/projects.tsx, /src/routes/projects.tsx?tsr-split=component[22m
+[2m5:53:12 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/projects.tsx[22m
+[2m5:53:12 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:53:17 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/reveal.tsx[22m
+[2m5:53:17 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/reveal.tsx[22m
+[2m5:55:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:55:38 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:57:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:57:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:57:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:57:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m6:03:11 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/__root.tsx, /src/routes/index.tsx?tsr-split=component, /src/components/home/hero.tsx, /src/components/layout/footer.tsx, /src/components/layout/navbar.tsx, /src/components/command-palette.tsx, /src/components/links/links-page.tsx, /src/routes/resume.tsx?tsr-split=component, /src/components/playground/physics-playground.tsx[22m
+[2m6:03:11 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/site.ts[22m
+[2m6:03:11 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m6:03:15 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/links/links-page.tsx[22m
+[2m6:03:15 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/links/links-page.tsx[22m
+[2m6:03:16 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m6:03:16 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m6:03:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m6:03:19 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m6:03:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/footer.tsx[22m
+[2m6:03:22 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/footer.tsx[22m
+[2m6:03:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m6:03:25 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m6:03:31 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m6:03:31 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m6:03:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m6:03:33 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m6:04:23 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/links/links-page.tsx[22m
+[2m6:04:23 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/links/links-page.tsx[22m
+[2m6:05:49 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/links/links-page.tsx[22m
+[2m6:05:49 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/links/links-page.tsx[22m
+[2m6:05:49 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m6:07:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m6:51:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/__root.tsx, /src/routes/index.tsx?tsr-split=component, /src/components/home/hero.tsx, /src/components/layout/footer.tsx, /src/components/layout/navbar.tsx, /src/components/command-palette.tsx, /src/components/links/links-page.tsx, /src/routes/resume.tsx?tsr-split=component, /src/components/playground/physics-playground.tsx, /src/components/home/contact.tsx[22m
+[2m6:51:52 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/site.ts[22m
+[2m6:51:52 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m6:52:17 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/about.tsx, /src/components/home/timeline.tsx, /src/components/home/testimonials.tsx, /src/components/home/skills.tsx, /src/components/home/features.tsx, /src/components/home/pricing.tsx, /src/components/home/hero.tsx, /src/components/home/contact.tsx, /src/components/links/links-page.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m6:52:17 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/content.ts[22m
+[2m6:56:39 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/ui/button.tsx[22m
+[2m6:56:39 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/ui/button.tsx[22m
+[2m6:56:39 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m6:56:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/components/ui/button.tsx[22m Could not Fast Refresh ("buttonVariants" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m6:56:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/home/cta.tsx, /src/components/home/pricing.tsx, /src/components/home/hero.tsx, /src/components/home/contact.tsx, /src/components/home/projects.tsx, /src/components/layout/navbar.tsx, /src/components/layout/theme-toggle.tsx, /src/components/map/world-map.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/routes/resume.tsx?tsr-split=component, /src/components/playground/physics-playground.tsx[22m
+[2m6:56:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/lib/theme.tsx[22m
+[2m6:56:46 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/theme.tsx[22m
+[2m6:56:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/lib/theme.tsx[22m Could not Fast Refresh (export removed)
+[2m6:56:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/__root.tsx, /src/components/command-palette.tsx, /src/components/layout/theme-toggle.tsx[22m
+[2m6:56:48 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m6:56:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/footer.tsx[22m
+[2m6:56:50 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/footer.tsx[22m
+[2m6:58:05 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx, /src/components/command-palette.tsx, /src/components/map/world-map.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/routes/resume.tsx?tsr-split=component[22m
+[2m6:58:05 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/projects.ts[22m
+[2m6:58:05 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m6:58:28 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m6:58:28 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m6:58:37 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m6:58:37 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m6:58:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m6:58:46 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m6:58:46 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m6:58:57 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx[22m
+[2m6:58:57 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/blog.tsx[22m
+[2m6:58:57 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m7:00:04 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/project-visual.tsx[22m
+[2m7:00:04 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/project-visual.tsx[22m
+[2m7:00:24 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx[22m
+[2m7:00:24 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/projects.tsx[22m
+[2m7:00:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m7:00:25 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m7:00:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/command-palette.tsx[22m
+[2m7:00:26 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/command-palette.tsx[22m
+[2m7:00:29 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/command-palette.tsx[22m
+[2m7:00:29 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/command-palette.tsx[22m
+[2m7:00:45 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m7:00:45 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m7:00:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/map/world-map.tsx[22m
+[2m7:00:46 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/map/world-map.tsx[22m
+[2m7:00:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/map/world-map.tsx[22m
+[2m7:00:46 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/map/world-map.tsx[22m
+[2m7:00:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/map/world-map.tsx[22m
+[2m7:00:46 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/map/world-map.tsx[22m
+[2m7:00:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/map/world-map.tsx[22m
+[2m7:00:47 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/map/world-map.tsx[22m
+[2m7:00:49 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/map/world-map.tsx[22m
+[2m7:00:49 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/map/world-map.tsx[22m
+[2m7:00:49 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/testimonials.tsx[22m
+[2m7:00:49 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/testimonials.tsx[22m
+[2m7:01:01 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/map/world-map.tsx[22m
+[2m7:01:01 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/map/world-map.tsx[22m
+[2m7:01:03 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/about.tsx, /src/components/home/timeline.tsx, /src/components/home/testimonials.tsx, /src/components/home/skills.tsx, /src/components/home/features.tsx, /src/components/home/pricing.tsx, /src/components/home/hero.tsx, /src/components/home/contact.tsx, /src/components/links/links-page.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m7:01:03 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/content.ts[22m
+[2m7:02:15 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/ui/button.tsx[22m
+[2m7:02:15 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/ui/button.tsx[22m
+[2m7:02:15 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m7:02:15 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/components/ui/button.tsx[22m Could not Fast Refresh (export removed)
+[2m7:02:15 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/home/cta.tsx, /src/components/home/pricing.tsx, /src/components/home/hero.tsx, /src/components/home/contact.tsx, /src/components/home/projects.tsx, /src/components/layout/navbar.tsx, /src/components/layout/theme-toggle.tsx, /src/components/map/world-map.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/routes/resume.tsx?tsr-split=component, /src/components/playground/physics-playground.tsx[22m
+[2m7:02:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/lib/theme.tsx[22m
+[2m7:02:21 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/theme.tsx[22m
+[2m7:02:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/lib/theme.tsx[22m Could not Fast Refresh (export removed)
+[2m7:02:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/__root.tsx, /src/components/command-palette.tsx, /src/components/layout/theme-toggle.tsx[22m
+[2m7:02:29 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/command-palette.tsx[22m
+[2m7:02:29 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/command-palette.tsx[22m
+[2m7:02:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/theme-toggle.tsx[22m
+[2m7:02:30 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/theme-toggle.tsx[22m
+[2m7:06:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx, /src/routes/blog.tsx?tsr-split=component[22m
+[2m7:06:54 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/blog.tsx[22m
+[2m7:06:54 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m7:06:57 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m7:06:57 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m7:06:59 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m7:06:59 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m7:07:02 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m7:38:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx, /src/components/command-palette.tsx, /src/components/map/world-map.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/routes/resume.tsx?tsr-split=component[22m
+[2m7:38:19 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/projects.ts[22m
+[2m7:38:19 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m7:52:48 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/about.tsx, /src/components/home/timeline.tsx, /src/components/home/testimonials.tsx, /src/components/home/skills.tsx, /src/components/home/features.tsx, /src/components/home/pricing.tsx, /src/components/home/hero.tsx, /src/components/home/contact.tsx, /src/components/links/links-page.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m7:52:48 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/content.ts[22m
+[2m7:52:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/about.tsx, /src/components/home/timeline.tsx, /src/components/home/testimonials.tsx, /src/components/home/skills.tsx, /src/components/home/features.tsx, /src/components/home/pricing.tsx, /src/components/home/hero.tsx, /src/components/home/contact.tsx, /src/components/links/links-page.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m7:52:50 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/content.ts[22m
+[2m7:52:51 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/__root.tsx, /src/routes/index.tsx?tsr-split=component, /src/components/home/hero.tsx, /src/components/layout/footer.tsx, /src/components/layout/navbar.tsx, /src/components/command-palette.tsx, /src/components/links/links-page.tsx, /src/routes/resume.tsx?tsr-split=component, /src/components/playground/physics-playground.tsx, /src/components/home/contact.tsx, /src/routes/blog.tsx?tsr-split=component[22m
+[2m7:52:51 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/site.ts[22m
+[2m7:52:53 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx, /src/components/command-palette.tsx, /src/components/map/world-map.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/routes/resume.tsx?tsr-split=component[22m
+[2m7:52:53 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/projects.ts[22m
+[2m7:52:55 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx[22m
+[2m7:52:55 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/projects.tsx[22m
+[2m7:53:41 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m11:09:01 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m11:09:01 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m11:09:01 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m12:16:28 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/__root.tsx[22m
+[2m12:16:28 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/styles.css[22m
+[2m12:16:28 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m12:16:52 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/ui/badge.tsx[22m
+[2m12:16:52 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/ui/badge.tsx[22m
+[2m12:17:32 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/project-visual.tsx[22m
+[2m12:17:32 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/project-visual.tsx[22m
+[2m12:17:46 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/project-visual.tsx[22m
+[2m12:17:46 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/project-visual.tsx[22m
+[2m12:17:50 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component[22m
+[2m12:17:50 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m12:18:15 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx, /src/components/command-palette.tsx, /src/components/map/world-map.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/routes/resume.tsx?tsr-split=component[22m
+[2m12:18:15 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/projects.ts[22m
+[2m12:19:00 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx[22m
+[2m12:19:00 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/projects.tsx[22m
+[2m12:19:11 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/hero.tsx[22m
+[2m12:19:11 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/hero.tsx[22m
+[2m12:19:22 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/index.tsx, /src/routes/index.tsx?tsr-split=component[22m
+[2m12:19:22 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/index.tsx[22m
+[2m12:19:41 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/hero.tsx[22m
+[2m12:19:41 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/hero.tsx[22m
+[2m12:19:42 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/hero.tsx[22m
+[2m12:19:42 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/hero.tsx[22m
+[2m12:19:44 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/project-visual.tsx[22m
+[2m12:19:44 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/project-visual.tsx[22m
+[2m12:19:45 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/project-visual.tsx[22m
+[2m12:19:45 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/project-visual.tsx[22m
+[2m12:19:56 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/cta.tsx[22m
+[2m12:19:56 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/cta.tsx[22m
+[2m12:19:58 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/metrics.tsx[22m
+[2m12:19:58 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/metrics.tsx[22m
+[2m12:20:21 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/projects.$id.tsx, /src/routes/projects.$id.tsx?tsr-split=component[22m
+[2m12:20:21 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/projects.$id.tsx[22m
+[2m12:20:32 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx, /src/routes/blog.tsx?tsr-split=component[22m
+[2m12:20:32 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/blog.tsx[22m
+[2m12:20:46 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.$slug.tsx, /src/routes/blog.$slug.tsx?tsr-split=component[22m
+[2m12:20:46 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/blog.$slug.tsx[22m
+[2m12:21:28 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/project-visual.tsx[22m
+[2m12:21:28 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/project-visual.tsx[22m
+[2m12:21:59 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/project-visual.tsx[22m
+[2m12:21:59 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/project-visual.tsx[22m
+[2m12:22:31 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx[22m
+[2m12:22:31 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/projects.tsx[22m
+[2m12:35:47 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/__root.tsx[22m
+[2m12:35:47 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/styles.css[22m
+[2m12:35:47 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m12:35:49 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/__root.tsx[22m
+[2m12:35:49 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/styles.css[22m
+[2m12:35:51 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/__root.tsx[22m
+[2m12:35:51 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/styles.css[22m
+[2m12:35:53 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/__root.tsx[22m
+[2m12:35:53 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/styles.css[22m
+[2m12:35:55 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/ui/badge.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/components/home/projects.tsx, /src/components/project-visual.tsx[22m
+[2m12:35:55 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/categories.ts[22m
+[2m12:36:03 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/ui/badge.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/components/home/projects.tsx, /src/components/project-visual.tsx[22m
+[2m12:36:03 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/categories.ts[22m
+[2m12:36:10 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/ui/badge.tsx[22m
+[2m12:36:10 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/ui/badge.tsx[22m
+[2m12:36:12 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/ui/button.tsx[22m
+[2m12:36:12 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/ui/button-variants.ts[22m
+[2m12:36:20 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx[22m
+[2m12:36:20 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/projects.tsx[22m
+[2m12:36:24 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx[22m
+[2m12:36:24 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/projects.tsx[22m
+[2m12:36:29 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx[22m
+[2m12:36:29 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/projects.tsx[22m
+[2m12:36:33 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/projects.$id.tsx, /src/routes/projects.$id.tsx?tsr-split=component[22m
+[2m12:36:33 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/projects.$id.tsx[22m
+[2m12:37:09 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/projects.$id.tsx, /src/routes/projects.$id.tsx?tsr-split=component[22m
+[2m12:37:09 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/projects.$id.tsx[22m
+[2m12:37:12 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/cta.tsx[22m
+[2m12:37:12 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/cta.tsx[22m
+[2m12:37:21 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m12:37:21 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m12:37:22 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m12:37:22 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m12:37:42 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m12:37:42 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m12:37:51 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:38:04 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:38:06 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:38:28 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:38:30 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:38:32 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:38:34 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:38:44 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/map/world-map.tsx[22m
+[2m12:38:44 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/map/world-map.tsx[22m
+[2m12:38:47 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/map/world-map.tsx[22m
+[2m12:38:47 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/map/world-map.tsx[22m
+[2m12:39:06 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/hero.tsx[22m
+[2m12:39:06 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/hero.tsx[22m
+[2m12:39:08 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/hero.tsx[22m
+[2m12:39:08 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/hero.tsx[22m
+[2m12:39:11 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/hero.tsx[22m
+[2m12:39:11 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/hero.tsx[22m
+[2m12:39:37 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/footer.tsx[22m
+[2m12:39:37 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/footer.tsx[22m
+[2m12:39:51 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/links/links-page.tsx[22m
+[2m12:39:51 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/links/links-page.tsx[22m
+[2m12:39:53 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/links/links-page.tsx[22m
+[2m12:39:53 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/links/links-page.tsx[22m

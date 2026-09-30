@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-D3jfb0Ew.js";import{t}from"./site-shell-Yw2JzHd3.js";import{t as n}from"./contact-BUx11I68.js";var r=e();function i(){return(0,r.jsx)(t,{children:(0,r.jsx)(`div`,{className:`pt-8`,children:(0,r.jsx)(n,{standalone:!0})})})}export{i as component};

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Tejas — Physics × AI × Software",
+      "hasCanvas": false,
+      "bodyTextLen": 6850,
+      "bodyTextHash": "30573027d244c74912cb29d8e08fc9a4dd6b3c6bb071221950e20d8254b4b949",
+      "bodyTextPrefix": "TEJAS Home Work About Skills World Playground Contact Resume Let",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Tejas — Physics × AI × Software",
+      "hasCanvas": false,
+      "bodyTextLen": 6758,
+      "bodyTextHash": "9bf384e413a032bfe499cd0f1311613c9f3b37f47a52675fe361777d067e4e91",
+      "bodyTextPrefix": "TEJAS Home Work About Skills World Playground Contact Let's Work",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
