@@ -1,0 +1,113 @@
+(node:52468) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[2m2026-10-02T16:24:54.664Z[0m [33mWARN[0m [1m[Better Auth]:[0m Rate limiting could not determine a client IP and is falling back to a single shared per-path bucket. Ensure your runtime forwards a trusted client IP header, then set `advanced.ipAddress.ipAddressHeaders` or `advanced.ipAddress.trustedProxies` so the address can be resolved.
+[2m2026-10-02T16:24:56.040Z[0m [33mWARN[0m [1m[Better Auth]:[0m User not found
+[2m2026-10-02T17:24:37.051Z[0m [33mWARN[0m [1m[Better Auth]:[0m User not found
+Error: aborted
+    at abortIncoming (node:_http_server:811:17)
+    ... 2 lines matching cause stack trace ...
+    at TCP.<anonymous> (node:net:346:12) {
+  cause: Error: aborted
+      at abortIncoming (node:_http_server:811:17)
+      at socketOnClose (node:_http_server:805:3)
+      at Socket.emit (node:events:519:35)
+      at TCP.<anonymous> (node:net:346:12) {
+    code: 'ECONNRESET'
+  },
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+Error: aborted
+    at abortIncoming (node:_http_server:811:17)
+    ... 2 lines matching cause stack trace ...
+    at TCP.<anonymous> (node:net:346:12) {
+  cause: Error: aborted
+      at abortIncoming (node:_http_server:811:17)
+      at socketOnClose (node:_http_server:805:3)
+      at Socket.emit (node:events:519:35)
+      at TCP.<anonymous> (node:net:346:12) {
+    code: 'ECONNRESET'
+  },
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+Error: aborted
+    at abortIncoming (node:_http_server:811:17)
+    ... 2 lines matching cause stack trace ...
+    at TCP.<anonymous> (node:net:346:12) {
+  cause: Error: aborted
+      at abortIncoming (node:_http_server:811:17)
+      at socketOnClose (node:_http_server:805:3)
+      at Socket.emit (node:events:519:35)
+      at TCP.<anonymous> (node:net:346:12) {
+    code: 'ECONNRESET'
+  },
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+Error: aborted
+    at abortIncoming (node:_http_server:811:17)
+    ... 2 lines matching cause stack trace ...
+    at TCP.<anonymous> (node:net:346:12) {
+  cause: Error: aborted
+      at abortIncoming (node:_http_server:811:17)
+      at socketOnClose (node:_http_server:805:3)
+      at Socket.emit (node:events:519:35)
+      at TCP.<anonymous> (node:net:346:12) {
+    code: 'ECONNRESET'
+  },
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+Error: aborted
+    at abortIncoming (node:_http_server:811:17)
+    ... 2 lines matching cause stack trace ...
+    at TCP.<anonymous> (node:net:346:12) {
+  cause: Error: aborted
+      at abortIncoming (node:_http_server:811:17)
+      at socketOnClose (node:_http_server:805:3)
+      at Socket.emit (node:events:519:35)
+      at TCP.<anonymous> (node:net:346:12) {
+    code: 'ECONNRESET'
+  },
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+Error: aborted
+    at abortIncoming (node:_http_server:811:17)
+    ... 2 lines matching cause stack trace ...
+    at TCP.<anonymous> (node:net:346:12) {
+  cause: Error: aborted
+      at abortIncoming (node:_http_server:811:17)
+      at socketOnClose (node:_http_server:805:3)
+      at Socket.emit (node:events:519:35)
+      at TCP.<anonymous> (node:net:346:12) {
+    code: 'ECONNRESET'
+  },
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}

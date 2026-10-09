@@ -1,3 +1,16 @@
+export type BlogFigure = {
+  id: string;
+  kind: "line" | "pipeline" | "bars";
+  title: string;
+  caption: string;
+  /** For line charts: series of [x, y] pairs. */
+  series?: { label: string; points: [number, number][] }[];
+  /** For pipeline: ordered stage labels. */
+  stages?: string[];
+  /** For bars: [{ label, value }]. */
+  bars?: { label: string; value: number }[];
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -5,6 +18,7 @@ export type BlogPost = {
   excerpt: string;
   tags: string[];
   body: string[];
+  figures?: BlogFigure[];
 };
 
 export const posts: BlogPost[] = [
@@ -33,8 +47,18 @@ export const posts: BlogPost[] = [
       "QUICKIDE started as a complaint: most quantum learning material is either a wall of linear algebra or a black-box cloud notebook. Neither teaches you to *write* a program.",
       "QuCPL is a small custom language for describing quantum circuits and experiments. QUICKIDE wraps it in a GUI so you can type a program, watch the circuit, and step through simulation without leaving the window.",
       "The hard part is not the syntax highlighter. It is keeping the mental model tight: gates as operations, state as data, measurement as a first-class event. If the IDE leaks abstraction too early, beginners drown.",
+      "QuCPL Lite in the instruments lab is deliberately smaller than QUICKIDE — a statevector sandbox you can reason about, not a second IDE.",
       "Next steps: better visualization of amplitudes, algorithm templates (Grover, phase estimation), and a cleaner bridge from QuCPL sketches into NumPy state-vector experiments.",
       "Repo: https://github.com/tejastro123/QUICKIDE",
+    ],
+    figures: [
+      {
+        id: "qucpl-mental-model",
+        kind: "pipeline",
+        title: "QuCPL mental model",
+        caption: "Gates operate; state is data; measurement is first-class.",
+        stages: ["Source", "Parser", "Circuit", "Simulate", "Measure"],
+      },
     ],
   },
   {
@@ -47,9 +71,48 @@ export const posts: BlogPost[] = [
     body: [
       "My first RAG apps were classic: chunk a PDF, embed it, retrieve top-k, stuff a prompt. Useful for learning, fragile for everything else.",
       "The jump came from treating retrieval as a product surface. That meant better chunking strategies, hybrid search where keyword signals still matter, evaluation harnesses that catch silent regressions, and clear failure modes when the corpus is empty or stale.",
-      "Agentic RAG — where the system can reformulate queries, call tools, and iterate — is powerful but easy to over-engineer. Start with a single well-instrumented pipeline. Add agency only when a fixed chain provably fails.",
+"Agentic RAG — where the system can reformulate queries, call tools, and iterate — is powerful but easy to over-engineer. Start with a single well-instrumented pipeline. Add agency only when a fixed chain provably fails.",
+      "In-sample backtests look heroic. Walk-forward is where overfitting dies. I ban grid-search-without-holdout in the stock tool for that reason.",
       "Repos worth reading if you are starting: first-rag → rag-tut → PersonalRAG → college-rag → Agentic-RAG-PROD / Prod-API-RAG. Each step is a deliberate complexity increase, not a rewrite for its own sake.",
       "Profiles: https://github.com/tejastro123",
+    ],
+    figures: [
+      {
+        id: "hybrid-retrieval",
+        kind: "pipeline",
+        title: "Hybrid retrieval path",
+        caption: "Vector + BM25 fusion keeps exact identifiers from drowning.",
+        stages: ["Query", "Embed", "BM25", "Fusion", "LLM"],
+      },
+      {
+        id: "in-sample-vs-walkforward",
+        kind: "line",
+        title: "In-sample vs walk-forward (illustrative)",
+        caption:
+          "Not live market data — the shape of overfitting when you refuse a holdout window.",
+        series: [
+          {
+            label: "In-sample",
+            points: [
+              [0, 20],
+              [1, 42],
+              [2, 58],
+              [3, 70],
+              [4, 82],
+            ],
+          },
+          {
+            label: "Walk-forward",
+            points: [
+              [0, 18],
+              [1, 28],
+              [2, 34],
+              [3, 36],
+              [4, 39],
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -65,6 +128,15 @@ export const posts: BlogPost[] = [
       "The physics playground (Three.js + Rapier) is not decoration. It is a lab bench — gravity, restitution, drag, throw — and a reminder that simulation is a first-class way of thinking.",
       "Stack note: this workspace runs on TanStack Start + Vite because that is the platform contract. The product goals (React, TypeScript, Tailwind, Motion, D3, Three.js) are what matter for the work itself.",
       "Source: https://github.com/tejastro123/personal-HQ",
+    ],
+    figures: [
+      {
+        id: "hq-architecture",
+        kind: "pipeline",
+        title: "personal-HQ surface map",
+        caption: "One data source feeds grid, archive, map, search, and detail pages.",
+        stages: ["projects.ts", "Grid", "Archive", "Map", "Detail", "Search"],
+      },
     ],
   },
   {

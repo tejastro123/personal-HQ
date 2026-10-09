@@ -248,3 +248,466 @@
 [2m1:24:23 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/metrics.tsx[22m
 [2m1:24:23 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/metrics.tsx[22m
 [2m1:24:23 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m1:29:27 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m1:29:39 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m1:29:43 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m1:29:57 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m1:35:43 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:02:36 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:47:47 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m4:24:06 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/ui/badge.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/components/home/projects.tsx, /src/components/project-visual.tsx[22m
+[2m4:24:06 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/categories.ts[22m
+[2m4:24:06 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/projects.$id.tsx, /src/routes/projects.$id.tsx?tsr-split=component[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/projects.$id.tsx[22m
+[2m4:24:42 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m4:25:08 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m4:25:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m4:25:28 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m4:25:28 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m4:25:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m4:25:30 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m4:32:39 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m4:32:51 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:33:55 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m11:56:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/__root.tsx, /src/routes/index.tsx?tsr-split=component, /src/components/home/hero.tsx, /src/components/layout/footer.tsx, /src/components/layout/navbar.tsx, /src/components/command-palette.tsx, /src/components/links/links-page.tsx, /src/routes/resume.tsx?tsr-split=component, /src/components/playground/physics-playground.tsx, /src/components/home/contact.tsx, /src/routes/blog.tsx?tsr-split=component[22m
+[2m11:56:13 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/site.ts[22m
+[2m11:56:13 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m11:56:16 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m11:56:16 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m11:56:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m11:56:19 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m11:56:28 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/footer.tsx[22m
+[2m11:56:28 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/footer.tsx[22m
+[2m11:56:32 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/command-palette.tsx[22m
+[2m11:56:32 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/command-palette.tsx[22m
+[2m11:56:37 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m11:56:37 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m11:56:42 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m11:56:42 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m11:56:48 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m11:56:48 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m11:56:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m11:56:54 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m11:57:03 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m11:57:03 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m11:57:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m11:57:19 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m11:57:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m11:57:33 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m11:57:38 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m11:57:38 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m11:59:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m11:59:40 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m11:59:42 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m11:59:42 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m11:59:42 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m11:59:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m11:59:43 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m11:59:43 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m11:59:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m11:59:45 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m11:59:45 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m11:59:45 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m11:59:45 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:00:26 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m12:00:26 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m12:00:26 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m12:00:26 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m12:00:26 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m12:01:04 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m12:01:04 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m12:01:04 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m12:01:04 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m12:01:04 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m12:01:04 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m12:01:48 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:01:50 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:01:52 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:01:57 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m12:01:57 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m12:01:57 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m12:02:10 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.$slug.tsx, /src/routes/blog.$slug.tsx?tsr-split=component[22m
+[2m12:02:10 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/blog.$slug.tsx[22m
+[2m12:02:18 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.$slug.tsx, /src/routes/blog.$slug.tsx?tsr-split=component[22m
+[2m12:02:18 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/blog.$slug.tsx[22m
+[2m12:02:37 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m12:02:37 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m12:02:42 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m12:02:42 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m12:02:46 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m12:02:46 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m12:02:50 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/projects.$id.tsx, /src/routes/projects.$id.tsx?tsr-split=component[22m
+[2m12:02:50 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/projects.$id.tsx[22m
+[2m12:02:52 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/projects.$id.tsx, /src/routes/projects.$id.tsx?tsr-split=component[22m
+[2m12:02:52 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/projects.$id.tsx[22m
+[2m12:02:59 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/projects.$id.tsx, /src/routes/projects.$id.tsx?tsr-split=component[22m
+[2m12:02:59 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/projects.$id.tsx[22m
+[2m12:03:02 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:03:08 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:03:10 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:03:16 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:03:26 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/playground/physics-playground.tsx[22m
+[2m12:03:37 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:03:46 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:03:49 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:03:53 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:03:59 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/footer.tsx[22m
+[2m12:03:59 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/footer.tsx[22m
+[2m12:04:02 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/ui/badge.tsx, /src/routes/projects.$id.tsx?tsr-split=component, /src/components/home/projects.tsx, /src/components/project-visual.tsx[22m
+[2m12:04:02 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/categories.ts[22m
+[2m12:04:22 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m12:04:22 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m12:04:22 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/data/blog.ts:148:3 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m148 │[0m [38;5;249m [0m[38;5;249m [0m}[38;5;249m,[0m
+ [38;5;240m    │[0m   ┬  
+ [38;5;240m    │[0m   ╰── 
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/tejas/OneDrive/Desktop/personal-HQ/src/data/blog.ts[39m
+      at transformWithOxc (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:7551:19)
+      at TransformPluginContext.transform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:7623:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:8515:51)
+      at async loadAndTransform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:19998:26)
+[2m12:04:22 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/data/blog.ts:148:3 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m148 │[0m [38;5;249m [0m[38;5;249m [0m}[38;5;249m,[0m
+ [38;5;240m    │[0m   ┬  
+ [38;5;240m    │[0m   ╰── 
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/tejas/OneDrive/Desktop/personal-HQ/src/data/blog.ts[39m
+[2m12:04:45 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m12:04:45 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m12:04:45 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/data/blog.ts:148:3 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m148 │[0m [38;5;249m [0m[38;5;249m [0m}[38;5;249m,[0m
+ [38;5;240m    │[0m   ┬  
+ [38;5;240m    │[0m   ╰── 
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/tejas/OneDrive/Desktop/personal-HQ/src/data/blog.ts[39m
+      at transformWithOxc (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:7551:19)
+      at TransformPluginContext.transform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:7623:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:8515:51)
+      at async loadAndTransform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:19998:26)
+[2m12:04:45 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/data/blog.ts:148:3 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m148 │[0m [38;5;249m [0m[38;5;249m [0m}[38;5;249m,[0m
+ [38;5;240m    │[0m   ┬  
+ [38;5;240m    │[0m   ╰── 
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/tejas/OneDrive/Desktop/personal-HQ/src/data/blog.ts[39m
+[2m12:04:48 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m12:04:48 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m12:04:49 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/data/blog.ts:148:3 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m148 │[0m [38;5;249m [0m[38;5;249m [0m}[38;5;249m,[0m
+ [38;5;240m    │[0m   ┬  
+ [38;5;240m    │[0m   ╰── 
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/tejas/OneDrive/Desktop/personal-HQ/src/data/blog.ts[39m
+      at transformWithOxc (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:7551:19)
+      at TransformPluginContext.transform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:7623:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:8515:51)
+      at async loadAndTransform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:19998:26)
+[2m12:04:49 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/data/blog.ts:148:3 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m148 │[0m [38;5;249m [0m[38;5;249m [0m}[38;5;249m,[0m
+ [38;5;240m    │[0m   ┬  
+ [38;5;240m    │[0m   ╰── 
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/tejas/OneDrive/Desktop/personal-HQ/src/data/blog.ts[39m
+[2m12:05:18 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m12:05:18 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m12:05:18 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/data/blog.ts:148:3 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m148 │[0m [38;5;249m [0m[38;5;249m [0m}[38;5;249m,[0m
+ [38;5;240m    │[0m   ┬  
+ [38;5;240m    │[0m   ╰── 
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/tejas/OneDrive/Desktop/personal-HQ/src/data/blog.ts[39m
+      at transformWithOxc (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:7551:19)
+      at TransformPluginContext.transform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:7623:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:8515:51)
+      at async loadAndTransform (file:///C:/Users/tejas/OneDrive/Desktop/personal-HQ/node_modules/vite/dist/node/chunks/node.js:19998:26)
+[2m12:05:18 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/data/blog.ts:148:3 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m148 │[0m [38;5;249m [0m[38;5;249m [0m}[38;5;249m,[0m
+ [38;5;240m    │[0m   ┬  
+ [38;5;240m    │[0m   ╰── 
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/tejas/OneDrive/Desktop/personal-HQ/src/data/blog.ts[39m
+[2m12:09:40 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/components/layout/footer.tsx[22m
+[2m12:09:40 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/data/blog.ts[22m
+[2m12:10:45 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:10:46 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/command-palette.tsx[22m
+[2m12:10:46 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/command-palette.tsx[22m
+[2m12:10:48 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:10:49 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:10:50 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m12:10:50 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m12:10:51 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m12:10:51 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m12:10:52 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/links/links-page.tsx[22m
+[2m12:10:52 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/links/links-page.tsx[22m
+[2m12:10:53 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:10:54 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:11:31 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:12:19 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:12:19 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:12:20 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:12:22 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m12:12:22 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m12:12:26 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/layout/navbar.tsx[22m
+[2m12:12:26 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/layout/navbar.tsx[22m
+[2m12:13:06 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:13:07 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:13:08 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:21:22 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/instruments.tsx[22m
+[2m12:21:22 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/instruments.tsx[22m
+[2m12:21:22 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m12:23:27 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/instruments.tsx, /src/routes/instruments.tsx?tsr-split=component[22m
+[2m12:23:27 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/instruments.tsx[22m
+[2m12:23:27 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m12:23:31 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/particle-lab.tsx[22m
+[2m12:23:31 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/particle-lab.tsx[22m
+[2m12:23:32 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/particle-lab.tsx[22m
+[2m12:23:32 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/particle-lab.tsx[22m
+[2m12:27:08 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m12:27:38 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/qucpl-lite.tsx[22m
+[2m12:27:38 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/qucpl-lite.tsx[22m
+[2m12:27:38 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m12:27:39 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/qucpl-lite.tsx[22m
+[2m12:27:39 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/qucpl-lite.tsx[22m
+[2m12:27:47 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/orbit-lab.tsx[22m
+[2m12:27:47 am[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/orbit-lab.tsx[22m
+[2m4:24:41 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m4:24:41 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m4:24:41 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m4:24:41 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m4:24:41 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m4:25:16 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/qucpl-lite.tsx[22m
+[2m4:25:16 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/qucpl-lite.tsx[22m
+[2m4:25:28 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/qucpl-lite.tsx[22m
+[2m4:25:28 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/qucpl-lite.tsx[22m
+[2m4:26:03 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/particle-lab.tsx[22m
+[2m4:26:03 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/particle-lab.tsx[22m
+[2m4:26:59 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/topology/topology-page.tsx[22m
+[2m4:26:59 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/topology/topology-page.tsx[22m
+[2m4:27:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/hero.tsx[22m
+[2m4:27:13 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/hero.tsx[22m
+[2m4:27:13 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m4:27:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/instruments-page.tsx[22m
+[2m4:27:21 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/instruments-page.tsx[22m
+[2m4:27:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/instruments-page.tsx[22m
+[2m4:27:22 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/instruments-page.tsx[22m
+[2m4:27:24 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/command-palette.tsx[22m
+[2m4:27:24 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/command-palette.tsx[22m
+[2m4:28:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/instruments.tsx, /src/routes/instruments.tsx?tsr-split=component[22m
+[2m4:28:50 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/instruments.tsx[22m
+[2m4:28:50 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m4:29:39 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/particle-lab.tsx[22m
+[2m4:29:39 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/particle-lab.tsx[22m
+[2m4:29:41 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/topology/topology-page.tsx[22m
+[2m4:29:41 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/topology/topology-page.tsx[22m
+[2m4:30:24 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:30:28 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:30:35 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:30:38 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:33:58 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/particle-lab.tsx[22m
+[2m4:33:58 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/particle-lab.tsx[22m
+[2m4:34:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:34:28 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/particle-lab.tsx[22m
+[2m4:34:28 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/instruments/particle-lab.tsx[22m
+[2m4:37:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:39:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:39:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:39:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:40:18 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:56:36 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/instruments/chaos-lab.tsx[22m
+[2m4:56:39 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m4:56:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/hero.tsx[22m
+[2m4:56:47 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/hero.tsx[22m
+[2m4:56:47 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m4:56:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:10:29 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:10:44 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:10:44 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:10:44 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:10:44 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:10:44 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:10:44 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:22 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:22 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:14:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:51 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:51 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:51 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:51 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:14:51 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:52 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:52 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:14:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:54 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:54 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:14:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:56 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:56 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:14:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:58 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:58 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:58 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:58 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:14:58 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:59 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:59 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:14:59 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:59 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routeTree.gen.ts[22m
+[2m5:14:59 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:15:00 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.tanstack/tmp/88ae8b4b-2f9d91f40d0ab3664aacbec7b2dbadda[22m
+[2m5:18:36 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:18:42 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:18:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:18:51 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:19:14 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx[22m
+[2m5:19:14 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/projects.tsx[22m
+[2m5:19:14 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:19:18 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.tsx, /src/routes/blog.tsx?tsr-split=component[22m
+[2m5:19:18 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/blog.tsx[22m
+[2m5:19:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.$slug.tsx, /src/routes/blog.$slug.tsx?tsr-split=component[22m
+[2m5:19:22 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/blog.$slug.tsx[22m
+[2m5:19:27 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/blog.$slug.tsx, /src/routes/blog.$slug.tsx?tsr-split=component[22m
+[2m5:19:27 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/blog.$slug.tsx[22m
+[2m5:19:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m5:19:47 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m5:19:51 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m5:19:51 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m5:19:55 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m5:19:55 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m5:20:00 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/contact.tsx[22m
+[2m5:20:00 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/home/contact.tsx[22m
+[2m5:20:36 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:20:39 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:20:41 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:20:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:20:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:21:12 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/resume.tsx, /src/routes/resume.tsx?tsr-split=component[22m
+[2m5:21:12 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/resume.tsx[22m
+[2m5:21:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/projects.$id.tsx, /src/routes/projects.$id.tsx?tsr-split=component[22m
+[2m5:21:21 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/projects.$id.tsx[22m
+[2m5:21:23 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:21:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:03 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:07 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:36 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/login.tsx[22m
+[2m5:23:36 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/login.tsx[22m
+[2m5:23:39 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx, /src/components/home/contact.tsx[22m
+[2m5:23:44 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:45 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:49 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:49 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:23:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:24:10 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:24:32 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:24:34 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:24:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:25:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:25:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:25:53 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:26:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:26:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx, /src/components/home/contact.tsx[22m
+[2m5:26:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:26:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:26:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:26:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:26:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:26:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:26:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:30:10 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m5:30:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mdependencies optimized: [33m@tanstack/router-core, @tanstack/router-core/isServer, @tanstack/router-core/ssr/client, seroval[32m[39m
+[2m5:30:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32moptimized dependencies changed. reloading[39m
+[2m5:30:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m5:30:50 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/db.ts[22m
+[2m5:30:50 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m5:32:02 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m8:11:15 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m8:11:15 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/auth/server.ts[22m
+[2m8:11:15 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m8:11:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m8:11:19 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/auth/server.ts[22m
+[2m8:53:00 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m8:53:01 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mdependencies optimized: [33m@better-auth/core/env, @better-auth/core/error, @better-auth/core/utils/error-codes, @better-auth/core/utils/string, @better-auth/core/utils/url, @better-fetch/fetch, defu, nanostores[32m[39m
+[2m8:53:01 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32moptimized dependencies changed. reloading[39m
+[2m8:54:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m8:54:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mdependency optimized: [33mjose[32m[39m
+[2m8:54:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m8:54:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m8:54:35 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mdependencies optimized: [33m@better-auth/core, @better-auth/core/api, @better-auth/core/context, @better-auth/core/db, @better-auth/core/db/adapter, @better-auth/core/instrumentation, @better-auth/core/oauth2, @better-auth/core/social-providers, @better-auth/core/utils/db, @better-auth/core/utils/deprecate, @better-auth/core/utils/fetch-metadata, @better-auth/core/utils/host, @better-auth/core/utils/id, @better-auth/core/utils/ip, @better-auth/core/utils/is-api-error, @better-auth/core/utils/json, @better-auth/kysely-adapter, @better-auth/telemetry, @better-auth/utils, @better-auth/utils/base64, @better-auth/utils/binary, @better-auth/utils/hash, @better-auth/utils/hmac, @better-auth/utils/otp, @better-auth/utils/password, @better-auth/utils/random, @noble/ciphers/chacha.js, @noble/ciphers/utils.js, @noble/hashes/hkdf.js, @noble/hashes/sha2.js, @noble/hashes/sha3.js, @noble/hashes/utils.js, @tanstack/history, @tanstack/router-core/ssr/server, better-call, h3-v2, jose/errors, kysely, pg[32m[39m
+[2m8:54:35 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32moptimized dependencies changed. reloading[39m
+[2m8:56:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m9:04:16 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/admin/admin-shell.tsx[22m
+[2m9:04:16 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/admin/admin-shell.tsx[22m
+[2m9:04:16 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m9:08:15 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/admin/admin-shell.tsx[22m
+[2m9:08:15 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/components/admin/admin-shell.tsx[22m
+[2m9:08:15 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m9:11:34 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx, /src/components/home/contact.tsx, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/routes/resume.tsx?tsr-split=component, /src/routes/projects.$id.tsx?tsr-split=component, /src/components/admin/pages/dashboard.tsx, /src/components/admin/admin-shell.tsx[22m
+[2m9:11:34 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/auth/middleware.ts[22m
+[2m9:11:34 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m9:11:42 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/home/projects.tsx, /src/components/home/contact.tsx, /src/routes/blog.tsx?tsr-split=component, /src/routes/blog.$slug.tsx?tsr-split=component, /src/routes/resume.tsx?tsr-split=component, /src/routes/projects.$id.tsx?tsr-split=component, /src/components/admin/pages/dashboard.tsx, /src/components/admin/admin-shell.tsx[22m
+[2m9:11:42 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/auth/admin-middleware.ts[22m
+[2m9:11:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct[22m
+[2m9:11:46 pm[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/admin.ts[22m

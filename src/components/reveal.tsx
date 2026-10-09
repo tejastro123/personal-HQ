@@ -39,7 +39,7 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-2xl", className)}>
       {eyebrow ? (
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+        <p className="section-rail mono text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
           {eyebrow}
         </p>
       ) : null}
@@ -52,5 +52,21 @@ export function SectionHeading({
         </p>
       ) : null}
     </div>
+  );
+}
+
+export function GradientHeadline({ text }: { text: string }) {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (words.length <= 2) {
+    return <span className="gradient-text">{text}</span>;
+  }
+  const cut = Math.max(1, words.length - Math.min(3, Math.ceil(words.length * 0.28)));
+  const head = words.slice(0, cut).join(" ");
+  const tail = words.slice(cut).join(" ");
+  return (
+    <>
+      {head}{" "}
+      <span className="gradient-text">{tail}</span>
+    </>
   );
 }

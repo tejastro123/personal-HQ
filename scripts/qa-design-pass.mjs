@@ -22,28 +22,28 @@ const lightBg = await page.evaluate(() => getComputedStyle(document.body).backgr
 
 await page.goto(`${base}/blog/quickide-and-the-qucpl-language`, { waitUntil: "networkidle" });
 await page.waitForTimeout(500);
-const bodyText = await page.locator("article").innerText();
-await page.screenshot({ path: "screenshots/qa-design-blog-post.png", fullPage: true });
-const hasReadTime = /\d+\s*min read/i.test(bodyText);
-const hasRelatedProjects = bodyText.includes("Related projects");
+  const bodyText = await page.locator("article").innerText();
+  await page.screenshot({ path: "screenshots/qa-design-blog-post.png", fullPage: true });
+  const hasReadTime = /\d+\s*min read/i.test(bodyText);
+  const hasRelatedProjects = /related projects/i.test(bodyText);
 
-await page.goto(`${base}/projects/quickide`, { waitUntil: "networkidle" });
-await page.waitForTimeout(500);
-const detail = await page.locator("article").innerText();
-await page.screenshot({ path: "screenshots/qa-design-case-study.png", fullPage: true });
+  await page.goto(`${base}/projects/quickide`, { waitUntil: "networkidle" });
+  await page.waitForTimeout(500);
+  const detail = await page.locator("article").innerText();
+  await page.screenshot({ path: "screenshots/qa-design-case-study.png", fullPage: true });
 
-console.log(
-  JSON.stringify(
-    {
-      lightBg,
-      hasReadTime,
-      hasRelatedProjects,
-      hasCaseStudyNotes: detail.includes("Case study notes"),
-      hasStack: detail.includes("STACK") || detail.includes("Stack"),
-      errors,
-    },
-    null,
-    2,
-  ),
-);
+  console.log(
+    JSON.stringify(
+      {
+        lightBg,
+        hasReadTime,
+        hasRelatedProjects,
+        hasCaseStudyNotes: /case study notes/i.test(detail),
+        hasStack: detail.includes("STACK") || detail.includes("Stack"),
+        errors,
+      },
+      null,
+      2,
+    ),
+  );
 await browser.close();

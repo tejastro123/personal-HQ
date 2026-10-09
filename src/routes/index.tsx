@@ -9,12 +9,14 @@ import { Skills } from "@/components/home/skills";
 import { Timeline } from "@/components/home/timeline";
 import { SiteShell } from "@/components/layout/site-shell";
 import { site } from "@/data/site";
+import { useContentVersionPoll } from "@/lib/use-public-content";
 
 const WorldMap = lazy(() => import("@/components/map/world-map"));
 
 export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
+  useContentVersionPoll(true);
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
     if (!hash) return;

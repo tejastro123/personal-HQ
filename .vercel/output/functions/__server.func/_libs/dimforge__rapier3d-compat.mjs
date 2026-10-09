@@ -1,4 +1,4 @@
-import { n as __exportAll } from "../_runtime.mjs";
+import { r as __exportAll } from "../_runtime.mjs";
 //#region node_modules/@dimforge/rapier3d-compat/rapier.mjs
 var rapier_exports = /* @__PURE__ */ __exportAll({
 	ActiveCollisionTypes: () => wI,

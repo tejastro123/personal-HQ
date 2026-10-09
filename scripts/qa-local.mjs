@@ -8,7 +8,7 @@ mkdirSync(outDir, { recursive: true });
 const routes = [
   { name: "home", path: "/", wait: "text=Building ambitious ideas" },
   { name: "projects", path: "/projects", wait: "text=All work" },
-  { name: "project-detail", path: "/projects/tejasos", wait: "text=TejasOS" },
+  { name: "project-detail", path: "/projects/quickide", wait: "text=QUICKIDE" },
   { name: "links", path: "/links", wait: "text=TEJAS" },
   { name: "contact", path: "/contact", wait: "text=Start a conversation" },
   { name: "resume", path: "/resume", wait: "text=Print / Save PDF" },

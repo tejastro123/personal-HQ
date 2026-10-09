@@ -4,12 +4,13 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { posts } from "@/data/blog";
 import { projects } from "@/data/projects";
 import { getSocialLinks, site } from "@/data/site";
+import { usePublicSiteSettings } from "@/lib/use-public-content";
 
 const explore = [
   { label: "Work", to: "/", hash: "work" },
-  { label: "About", to: "/", hash: "about" },
-  { label: "Skills", to: "/", hash: "skills" },
-  { label: "World", to: "/", hash: "world" },
+  { label: "Instruments", to: "/instruments" },
+  { label: "Systems", to: "/systems" },
+  { label: "Topology", to: "/topology" },
   { label: "Playground", to: "/playground" },
 ];
 
@@ -35,18 +36,30 @@ const categoryIndex = (() => {
 const latestPost = posts[0];
 
 export function Footer() {
-  const socials = getSocialLinks();
+  const settings = usePublicSiteSettings();
+  const fromSettings = [
+    settings.social.github && { id: "github", label: "GitHub", href: settings.social.github },
+    settings.social.linkedin && { id: "linkedin", label: "LinkedIn", href: settings.social.linkedin },
+    settings.social.x && { id: "x", label: "X / Twitter", href: settings.social.x },
+    settings.social.instagram && { id: "instagram", label: "Instagram", href: settings.social.instagram },
+    settings.social.youtube && { id: "youtube", label: "YouTube", href: settings.social.youtube },
+  ].filter(Boolean) as { id: string; label: string; href: string }[];
+  const socials = fromSettings.length ? fromSettings : getSocialLinks();
   return (
-    <footer className="border-t border-border bg-background-secondary">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-12">
+    <footer className="relative overflow-hidden border-t border-border bg-background-secondary">
+      <div className="footer-orb footer-orb-a pointer-events-none absolute -left-20 top-0 size-72 rounded-full bg-accent/10 blur-3xl" aria-hidden />
+      <div className="footer-orb footer-orb-b pointer-events-none absolute -right-16 bottom-0 size-64 rounded-full bg-accent-2/8 blur-3xl" aria-hidden />
+      <div className="footer-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="font-display text-sm font-semibold tracking-[0.18em]">
-            {site.name.toUpperCase()}
+          <p className="inline-flex items-center gap-2 font-display text-sm font-semibold tracking-[0.18em]">
+            <span className="size-1.5 rounded-full bg-accent shadow-[0_0_10px_var(--accent)]" />
+            {(settings.name || site.name).toUpperCase()}
           </p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            {site.footer}
+            {settings.footer || site.footer}
           </p>
-          <div className="mt-6 rounded-xl border border-border bg-card/60 p-4">
+          <div className="glass-soft frame-panel mt-6 rounded-xl border border-border/80 p-4 transition-transform duration-300 hover:-translate-y-0.5">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
               Index
             </p>
@@ -69,7 +82,7 @@ export function Footer() {
                   <Link
                     to="/blog/$slug"
                     params={{ slug: latestPost.slug }}
-                    className="mt-1 line-clamp-2 text-foreground hover:text-accent"
+                    className="mt-1 line-clamp-2 text-foreground transition-colors hover:text-accent"
                   >
                     {latestPost.title}
                   </Link>
@@ -89,9 +102,10 @@ export function Footer() {
                   <Link
                     to={item.to}
                     hash={"hash" in item ? item.hash : undefined}
-                    className="text-sm text-foreground/90 hover:text-foreground"
+                    className="footer-link group inline-flex items-center gap-1 text-sm text-foreground/90 transition-colors hover:text-foreground"
                   >
                     {item.label}
+                    <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
                   </Link>
                 </li>
               ))}
@@ -102,13 +116,14 @@ export function Footer() {
               Connect
             </p>
             <ul className="mt-4 space-y-2 text-sm">
-              {site.email ? (
+              {settings.email || site.email ? (
                 <li>
                   <a
-                    href={`mailto:${site.email}`}
-                    className="text-foreground/90 hover:text-foreground"
+                    href={`mailto:${settings.email || site.email}`}
+                    className="footer-link group inline-flex items-center gap-1 text-foreground/90 transition-colors hover:text-foreground"
                   >
                     Email
+                    <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
                   </a>
                 </li>
               ) : null}
@@ -118,14 +133,15 @@ export function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-foreground/90 hover:text-foreground"
+                    className="footer-link group inline-flex items-center gap-1 text-foreground/90 transition-colors hover:text-foreground"
                   >
                     {s.label}
+                    <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
                   </a>
                 </li>
               ))}
               <li>
-                <Link to="/contact" className="text-foreground hover:underline">
+                <Link to="/contact" className="footer-link text-foreground hover:text-accent">
                   Contact form
                 </Link>
               </li>
@@ -140,9 +156,10 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     to={item.to}
-                    className="text-sm text-foreground/90 hover:text-foreground"
+                    className="footer-link group inline-flex items-center gap-1 text-sm text-foreground/90 transition-colors hover:text-foreground"
                   >
                     {item.label}
+                    <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
                   </Link>
                 </li>
               ))}
@@ -158,7 +175,7 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
+              className="btn-sheen inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors duration-300 hover:bg-accent-soft hover:text-foreground"
             >
               Start a conversation
               <ArrowUpRight className="size-3.5" />

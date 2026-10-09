@@ -55,7 +55,7 @@ Social/email: set a URL in `site.social` (or leave `""` to hide). `getSocialLink
 ## Contact form delivery
 
 - **Default (no config):** submit opens a prefilled email in the visitor's mail app via `mailto:` — works with zero setup. Drafts also save to `localStorage` on this device.
-- **Formspree:** create a free form at [formspree.io](https://formspree.io), then set `formspreeId` in `src/data/site.ts` (e.g. `"xyzabcd"`). Submissions POST to `https://formspree.io/f/{id}`.
+- **Formspree:** create a free form at [formspree.io](https://formspree.io), then set `formspreeId` in `src/data/site.ts` (e.g. `"xyzabcd"`). Submissions POST to `https://formspree.io/f/{id}`. Until that ID is filled in, every visit uses the mailto path — no server endpoint is required.
 
 ## Notes
 
@@ -63,5 +63,5 @@ Social/email: set a URL in `site.social` (or leave `""` to hide). `getSocialLink
 - **Testimonials:** placeholders clearly labeled until real endorsements exist (`src/data/content.ts`).
 - **Stack:** this workspace runs on TanStack Start + Vite (platform contract). Product goals — React, TypeScript, Tailwind, Motion, D3, Three.js — are what matter for the work itself.
 - **Deploy target:** Vercel (Nitro). Never create `.env`; platform injects env on deploy.
-- **OG share card:** platform PWA middleware injects tags from `src/lib/og/site.json`. Do not put `og:*` in `__root.tsx`.
+- **OG share card:** platform PWA middleware injects tags from `src/lib/og/site.json`. Do not put `og:*` in `__root.tsx`. Identity lives in `src/lib/og/site.json` (`title`, `card: "custom"`, `color`); the 1200×630 image is `public/og.jpg`.
 - **QA scripts:** `scripts/qa-*.mjs` (Playwright). Set `QA_URL` to point at a different port.

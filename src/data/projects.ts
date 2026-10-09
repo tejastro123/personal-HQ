@@ -81,7 +81,124 @@ type Seed = {
 
 const GH = "https://github.com/tejastro123/";
 
+/** Global hubs — where the work was built, researched, or collaborates. */
+export const COUNTRY_HUBS = {
+  "356": { name: "India", lngLat: [78.0, 22.0] as [number, number] },
+  "840": { name: "United States", lngLat: [-98.0, 39.0] as [number, number] },
+  "826": { name: "United Kingdom", lngLat: [-2.0, 54.0] as [number, number] },
+  "276": { name: "Germany", lngLat: [10.4, 51.2] as [number, number] },
+  "392": { name: "Japan", lngLat: [138.0, 36.0] as [number, number] },
+  "076": { name: "Brazil", lngLat: [-52.0, -10.0] as [number, number] },
+  "250": { name: "France", lngLat: [2.5, 46.5] as [number, number] },
+  "036": { name: "Australia", lngLat: [134.0, -25.0] as [number, number] },
+  "554": { name: "New Zealand", lngLat: [174.0, -41.0] as [number, number] },
+  "156": { name: "China", lngLat: [104.0, 35.0] as [number, number] },
+  "410": { name: "South Korea", lngLat: [127.8, 36.5] as [number, number] },
+  "528": { name: "Netherlands", lngLat: [5.3, 52.1] as [number, number] },
+  "752": { name: "Sweden", lngLat: [15.0, 62.0] as [number, number] },
+  "724": { name: "Spain", lngLat: [-3.7, 40.4] as [number, number] },
+  "380": { name: "Italy", lngLat: [12.5, 42.8] as [number, number] },
+  "756": { name: "Switzerland", lngLat: [8.2, 46.8] as [number, number] },
+  "643": { name: "Russia", lngLat: [90.0, 60.0] as [number, number] },
+  "710": { name: "South Africa", lngLat: [24.0, -29.0] as [number, number] },
+  "566": { name: "Nigeria", lngLat: [8.0, 9.0] as [number, number] },
+  "124": { name: "Canada", lngLat: [-100.0, 56.0] as [number, number] },
+  "586": { name: "Pakistan", lngLat: [69.3, 30.4] as [number, number] },
+  "144": { name: "Sri Lanka", lngLat: [80.7, 7.9] as [number, number] },
+  "050": { name: "Bangladesh", lngLat: [90.4, 23.7] as [number, number] },
+  "064": { name: "Bhutan", lngLat: [90.4, 27.5] as [number, number] },
+  "524": { name: "Nepal", lngLat: [84.0, 28.4] as [number, number] },
+} as const;
+
+/** Thematic hubs: project id / category → map location. Home base stays India. */
+const PROJECT_HUBS: Record<string, { countryId: string; jitter?: [number, number] }> = {
+  // Space / NASA / astronomy
+  "artemis-tracker": { countryId: "840", jitter: [-90, 2] },
+  "time-astro": { countryId: "392", jitter: [4, -2] },
+  "farmer-friend-bot": { countryId: "356", jitter: [1, -1] },
+  // Quantum / research
+  quickide: { countryId: "356", jitter: [0.4, 0.3] },
+  "my-qucpl": { countryId: "356", jitter: [-0.3, 0.4] },
+  "quantum-ibm-basics": { countryId: "840", jitter: [-40, 4] },
+  "quantum-computing-resources": { countryId: "826", jitter: [-1, 2] },
+  "quantum-projects": { countryId: "356", jitter: [0.6, -0.4] },
+  "qiskit-tutorials": { countryId: "840", jitter: [-30, -2] },
+  // Sports data
+  "f1-analytics": { countryId: "826", jitter: [2, -3] },
+  "pit-wall-pro": { countryId: "826", jitter: [1.2, 1.5] },
+  "ipl-live": { countryId: "356", jitter: [-0.5, 0.8] },
+  ipl: { countryId: "356", jitter: [0.5, -0.6] },
+  // Finance
+  "stock-signal-generator": { countryId: "840", jitter: [-70, 1] },
+  "stock-analyst": { countryId: "356", jitter: [0.3, 0.5] },
+  "stock-price-predictor": { countryId: "840", jitter: [-60, -3] },
+  "california-housing-predictor": { countryId: "840", jitter: [-95, -2] },
+  // Web / product
+  livemart: { countryId: "356", jitter: [-0.8, 0.2] },
+  "travel-planner": { countryId: "528", jitter: [0.2, 1] },
+  "expense-tracker": { countryId: "724", jitter: [-0.5, -0.8] },
+  valut: { countryId: "756", jitter: [0.3, 0.6] },
+  airdraw: { countryId: "410", jitter: [0.4, -0.4] },
+  webrtc: { countryId: "124", jitter: [-2, 1] },
+  studymate: { countryId: "356", jitter: [0.7, 0.1] },
+  fitos: { countryId: "356", jitter: [-0.2, -0.7] },
+  sudoku: { countryId: "392", jitter: [-0.6, 0.3] },
+  "text-app": { countryId: "276", jitter: [0.4, -0.3] },
+  "claude-code": { countryId: "840", jitter: [-20, 3] },
+  "personal-hq": { countryId: "356", jitter: [0.1, -0.1] },
+  // DS / education
+  "dsmlai-projects": { countryId: "356", jitter: [0.2, -0.5] },
+  "ds-course": { countryId: "356", jitter: [-0.4, -0.3] },
+  "data-science": { countryId: "356", jitter: [0.8, 0.4] },
+  "python-basic": { countryId: "356", jitter: [-0.6, 0.5] },
+  "100-days-of-python": { countryId: "356", jitter: [0.5, 0.7] },
+  python: { countryId: "356", jitter: [-0.1, 0.9] },
+  cpp: { countryId: "356", jitter: [0.9, -0.2] },
+  "cpp-dsa": { countryId: "356", jitter: [-0.7, -0.4] },
+  "python-dsa": { countryId: "356", jitter: [0.4, -0.8] },
+  java_dsa: { countryId: "356", jitter: [-0.3, -0.9] },
+  "datastructures-algorithms": { countryId: "276", jitter: [0.7, 0.2] },
+  java_tutorial: { countryId: "752", jitter: [0.5, 0.3] },
+  "web-dev-basics": { countryId: "356", jitter: [0.2, 0.6] },
+  "web-dev-pjt": { countryId: "356", jitter: [-0.5, 0.1] },
+  "my-react": { countryId: "356", jitter: [0.6, 0.2] },
+  "dbms-pjt2": { countryId: "036", jitter: [-1, 0.5] },
+  django: { countryId: "826", jitter: [0.8, -0.5] },
+  // RAG / AI
+  "personal-rag": { countryId: "356", jitter: [0.3, 0.2] },
+  "agentic-rag-prod": { countryId: "356", jitter: [-0.4, 0.6] },
+  "prod-api-rag": { countryId: "840", jitter: [-50, -1] },
+  "college-rag": { countryId: "356", jitter: [0.5, -0.3] },
+  "rag-web": { countryId: "356", jitter: [-0.2, 0.4] },
+  "rag-tut": { countryId: "826", jitter: [-0.8, 1] },
+  "first-rag": { countryId: "356", jitter: [0.1, 0.8] },
+  "agentic-ai-lynq": { countryId: "840", jitter: [-10, -2] },
+  transformer: { countryId: "276", jitter: [0.3, 0.5] },
+  ml: { countryId: "356", jitter: [-0.5, -0.2] },
+  ai: { countryId: "356", jitter: [0.7, 0.5] },
+};
+
+const HUB_BY_COUNTRY: Record<string, { country: string; lngLat: [number, number] }> = Object.fromEntries(
+  Object.entries(COUNTRY_HUBS).map(([id, h]) => [id, { country: h.name, lngLat: h.lngLat }]),
+);
+
+function resolveHub(seed: Seed) {
+  const meta = PROJECT_HUBS[seed.id];
+  const countryId = meta?.countryId ?? seed.countryId ?? "356";
+  const hub = HUB_BY_COUNTRY[countryId] ?? HUB_BY_COUNTRY["356"]!;
+  const jitter = meta?.jitter ?? [0, 0];
+  return {
+    country: seed.country ?? hub.country,
+    countryId,
+    countryLngLat: [
+      hub.lngLat[0] + (jitter[0] ?? 0),
+      hub.lngLat[1] + (jitter[1] ?? 0),
+    ] as [number, number],
+  };
+}
+
 function project(seed: Seed): Project {
+  const geo = resolveHub(seed);
   return {
     id: seed.id,
     title: seed.title,
@@ -98,8 +215,9 @@ function project(seed: Seed): Project {
     status: seed.status,
     github: seed.repo ? `${GH}${seed.repo}` : undefined,
     demo: seed.demo,
-    country: seed.country ?? "India",
-    countryId: seed.countryId ?? "356",
+    country: geo.country,
+    countryId: geo.countryId,
+    countryLngLat: geo.countryLngLat,
     visual: seed.visual ?? "software",
     featured: seed.featured ?? false,
     related: seed.related ?? [],
@@ -1446,14 +1564,42 @@ export const projects: Project[] = seeds.map((seed) => {
 });
 
 const byId = new Map(projects.map((p) => [p.id, p]));
-const byCountryId = new Map(projects.map((p) => [p.countryId, p]));
+const byCountryId = new Map<string, Project[]>();
+for (const p of projects) {
+  const key = String(p.countryId);
+  const list = byCountryId.get(key) ?? [];
+  list.push(p);
+  byCountryId.set(key, list);
+}
 
 export function getProject(id: string) {
   return byId.get(id);
 }
 
 export function getProjectByCountryId(countryId: string) {
-  return byCountryId.get(String(countryId));
+  return byCountryId.get(String(countryId))?.[0];
+}
+
+export function getProjectsByCountryId(countryId: string) {
+  return byCountryId.get(String(countryId)) ?? [];
+}
+
+export function getCountrySummaries(metric: MapMetric) {
+  return [...byCountryId.entries()]
+    .map(([countryId, list]) => {
+      const hub = COUNTRY_HUBS[countryId as keyof typeof COUNTRY_HUBS];
+      const avg =
+        list.reduce((s, p) => s + p.metrics[metric], 0) / Math.max(1, list.length);
+      return {
+        countryId,
+        country: list[0]?.country ?? hub?.name ?? countryId,
+        lngLat: list[0]?.countryLngLat ?? hub?.lngLat,
+        count: list.length,
+        projects: list,
+        avg: Math.round(avg),
+      };
+    })
+    .sort((a, b) => b.count - a.count || b.avg - a.avg);
 }
 
 export function searchProjects(query: string) {
@@ -1466,6 +1612,7 @@ export function searchProjects(query: string) {
       p.description,
       p.country,
       p.status,
+      p.github ?? "",
       ...p.technologies,
     ]
       .join(" ")

@@ -33,7 +33,7 @@ await run("status-badges-home", async (page) => {
   return {
     hasActive: body.includes("Active"),
     hasResearch: body.includes("Research"),
-    hasArchive: body.includes("Archive"),
+    hasArchive: /archive/i.test(body),
     hasCaseStudy: /case study/i.test(body),
   };
 });
@@ -73,16 +73,20 @@ await run("playground-presets", async (page) => {
 });
 
 await run("project-sticky-rail", async (page) => {
-  await page.goto(`${base}/projects/quickide`, { waitUntil: "networkidle", timeout: 60000 });
+  await page.goto(`${base}/projects/physics-playground`, {
+    waitUntil: "networkidle",
+    timeout: 60000,
+  });
   await page.waitForTimeout(600);
   const aside = page.locator("aside").first();
   const asideVisible = await aside.isVisible();
   const asideText = asideVisible ? await aside.innerText() : "";
+  const lower = asideText.toLowerCase();
   await page.screenshot({ path: `${outDir}\\batch-project-rail.png` });
   return {
     asideVisible,
-    hasJump: asideText.includes("Jump"),
-    hasLiveDemo: /live demo/i.test(asideText),
+    hasJump: lower.includes("jump"),
+    hasLiveDemo: lower.includes("live demo"),
     hasGitHub: asideText.includes("GitHub"),
   };
 });
@@ -92,11 +96,12 @@ await run("footer-index", async (page) => {
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   await page.waitForTimeout(700);
   const footer = await page.locator("footer").innerText();
+  const lower = footer.toLowerCase();
   await page.screenshot({ path: `${outDir}\\batch-footer-index.png` });
   return {
-    hasIndex: footer.includes("Index"),
-    hasTotal: footer.includes("Total projects"),
-    hasLatest: /latest post/i.test(footer),
+    hasIndex: lower.includes("index"),
+    hasTotal: lower.includes("total projects"),
+    hasLatest: lower.includes("latest post"),
   };
 });
 
@@ -124,6 +129,20 @@ await run("map-arcs", async (page) => {
   const arcCount = await page.locator("path.map-arc").count();
   await page.screenshot({ path: `${outDir}\\batch-map-arcs.png` });
   return { arcCount };
+});
+
+await run("archive-status-filter", async (page) => {
+  await page.goto(`${base}/projects`, { waitUntil: "networkidle", timeout: 60000 });
+  await page.waitForSelector("text=All work", { timeout: 20000 });
+  await page.waitForTimeout(500);
+  const body = await page.locator("body").innerText();
+  await page.screenshot({ path: `${outDir}\\batch-archive-status.png` });
+  return {
+    hasActive: body.includes("Active"),
+    hasResearch: body.includes("Research"),
+    hasPrototype: body.includes("Prototype"),
+    hasArchive: body.includes("Archive"),
+  };
 });
 
 console.log(JSON.stringify(results, null, 2));

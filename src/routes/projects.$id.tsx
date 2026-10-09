@@ -4,14 +4,18 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SiteShell } from "@/components/layout/site-shell";
 import { ProjectVisual } from "@/components/project-visual";
-import { getProject, projects } from "@/data/projects";
+import { formatPushed, repoForProject } from "@/data/github-snapshot";
+import { getProject, projects as staticProjects } from "@/data/projects";
 import { caseStudyNotes, isFlagshipProject } from "@/lib/categories";
+import { usePublicProjects } from "@/lib/use-public-content";
 
 export const Route = createFileRoute("/projects/$id")({ component: ProjectPage });
 
 function ProjectPage() {
   const { id } = Route.useParams();
-  const project = getProject(id);
+  const liveProjects = usePublicProjects();
+  const projectSource = liveProjects.length ? liveProjects : staticProjects;
+  const project = projectSource.find((p) => p.id === id) ?? getProject(id);
 
   if (!project) {
     return (
@@ -27,10 +31,11 @@ function ProjectPage() {
   }
 
   const related = project.related
-    .map((rid) => projects.find((p) => p.id === rid))
+    .map((rid) => projectSource.find((p) => p.id === rid) ?? staticProjects.find((p) => p.id === rid))
     .filter(Boolean);
   const notes = caseStudyNotes[project.id];
   const flagship = isFlagshipProject(project.id);
+  const pulse = repoForProject(project.github);
 
   return (
     <SiteShell>
@@ -87,6 +92,36 @@ function ProjectPage() {
             <Block title="Lessons" body={project.lessons} />
           </dl>
 
+          {pulse ? (
+            <section className="mt-10 rounded-xl border border-border bg-card p-5">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                Repo pulse
+              </p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                <div>
+                  <p className="text-xs text-subtle">Name</p>
+                  <p className="mono text-sm text-foreground">{pulse.name}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-subtle">Stars</p>
+                  <p className="mono text-sm text-foreground tabular-nums">
+                    {pulse.stargazersCount}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs text-subtle">Last pushed</p>
+                  <p className="mono text-sm text-foreground tabular-nums">
+                    {formatPushed(pulse.pushedAt)}
+                  </p>
+                </div>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">
+                Snapshot source honest: stars stay 0 until{" "}
+                <span className="mono">npm run sync:github</span> fills live data.
+              </p>
+            </section>
+          ) : null}
+
           {notes ? (
             <section className="mt-12 rounded-xl border border-border bg-card p-6 sm:p-8">
               <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -101,6 +136,56 @@ function ProjectPage() {
                   </li>
                 ))}
               </ul>
+
+              {notes.diagram?.length ? (
+                <div className="mt-8">
+                  <h3 className="font-display text-xl tracking-tight">System sketch</h3>
+                  <pre className="mono mt-3 overflow-x-auto rounded-lg border border-border bg-background/60 p-4 text-[11px] leading-relaxed text-foreground/85">
+                    {notes.diagram.join("\n")}
+                  </pre>
+                </div>
+              ) : null}
+
+              {notes.tradeoffs?.length ? (
+                <div className="mt-8">
+                  <h3 className="font-display text-xl tracking-tight">Tradeoffs I paid for</h3>
+                  <div className="mt-3 overflow-x-auto">
+                    <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+                      <thead>
+                        <tr className="border-b border-border text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                          <th className="py-2 pr-4 font-medium">Choice</th>
+                          <th className="py-2 pr-4 font-medium">Cost</th>
+                          <th className="py-2 font-medium">When it earns it</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {notes.tradeoffs.map((t) => (
+                          <tr key={t.option} className="border-b border-border/60 align-top">
+                            <td className="py-3 pr-4 text-foreground/90">{t.option}</td>
+                            <td className="py-3 pr-4 text-muted-foreground">{t.cost}</td>
+                            <td className="py-3 text-muted-foreground">{t.when}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ) : null}
+
+              {notes.cut?.length ? (
+                <div className="mt-8">
+                  <h3 className="font-display text-xl tracking-tight">What I would cut next</h3>
+                  <ul className="mt-3 space-y-2">
+                    {notes.cut.map((c) => (
+                      <li key={c} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                        <span className="mt-2 size-1.5 shrink-0 rounded-full bg-status-archive" />
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
               <h3 className="mt-8 font-display text-xl tracking-tight">What I'd do next</h3>
               <ul className="mt-3 space-y-2">
                 {notes.next.map((h) => (

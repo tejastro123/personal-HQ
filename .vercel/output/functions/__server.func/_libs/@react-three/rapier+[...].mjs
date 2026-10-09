@@ -1,6 +1,6 @@
-import { i as __toESM } from "../../_runtime.mjs";
+import { o as __toESM } from "../../_runtime.mjs";
 import { r as require_react } from "../@hookform/resolvers+[...].mjs";
-import { a as useThree, c as BufferGeometry, d as MathUtils, f as Matrix4, h as Quaternion, i as useFrame, l as DynamicDrawUsage, o as suspend, p as Object3D, s as BufferAttribute, u as Euler, v as Vector3 } from "./drei+[...].mjs";
+import { _ as Quaternion, a as useThree, c as BufferGeometry, d as DynamicDrawUsage, f as Euler, h as Object3D, i as useFrame, m as Matrix4, o as suspend, p as MathUtils, s as BufferAttribute, x as Vector3 } from "./drei+[...].mjs";
 import { a as kI, i as fA, n as Rg, r as cg, t as EI } from "../dimforge__rapier3d-compat.mjs";
 //#region node_modules/three-stdlib/utils/BufferGeometryUtils.js
 function mergeVertices(geometry, tolerance = 1e-4) {

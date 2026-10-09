@@ -1,6 +1,8 @@
 import type { ProjectCategory, ProjectStatus } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
+export type { ProjectCategory, ProjectStatus };
+
 export const categoryVar: Record<ProjectCategory | "All", string> = {
   All: "var(--cat-default)",
   Quantum: "var(--cat-quantum)",
@@ -148,59 +150,188 @@ export function isFlagshipProject(id: string) {
   return FLAGSHIP_IDS.has(id);
 }
 
-export const caseStudyNotes: Record<
-  string,
-  { highlights: string[]; next: string[]; stackNotes?: string[] }
-> = {
+export type CaseStudyTradeoff = {
+  option: string;
+  cost: string;
+  when: string;
+};
+
+export type CaseStudyNotes = {
+  highlights: string[];
+  next: string[];
+  stackNotes?: string[];
+  /** Short ASCII architecture sketch for the case-study page. */
+  diagram?: string[];
+  /** Honest tradeoffs the builder already paid for. */
+  tradeoffs?: CaseStudyTradeoff[];
+  /** Features deliberately left out — cuts that keep the system honest. */
+  cut?: string[];
+};
+
+export const caseStudyNotes: Record<string, CaseStudyNotes> = {
   quickide: {
     highlights: [
       "Custom QuCPL language with GUI editing, circuit visualization, and step-through simulation",
       "Qiskit-backed execution path with IBM Quantum job submission",
       "Noise-model awareness so simulated results stay honest",
+      "Gate-level debugger that inspects statevectors at each instruction",
+      "OpenQASM 3.0 interop so sketches leave the IDE and enter the standard toolchain",
     ],
     next: [
       "Amplitude visualization that beginners can read without linear-algebra background",
-      "Algorithm templates: Grover, phase estimation",
+      "Algorithm templates: Grover, phase estimation, QFT",
       "Export path from QuCPL sketches into NumPy state-vector notebooks",
+      "Shared classroom workspaces (teacher issue circuit, students debug it)",
     ],
     stackNotes: ["React", "Node/Express", "Flask/Qiskit", "MongoDB", "OpenQASM 3.0"],
+    diagram: [
+      "React IDE (Monaco + QuCPL)",
+      "        │  JWT + job payloads",
+      "Node/Express API  ──►  MongoDB (circuits, runs, tokens)",
+      "        │",
+      "Flask + Qiskit compiler/simulator",
+      "        ├──► local simulator (ideal + noise)",
+      "        └──► IBM Quantum cloud jobs",
+      "        │",
+      "OpenQASM 3.0  ·  circuit SVG  ·  step debugger overlay",
+    ],
+    tradeoffs: [
+      {
+        option: "DSL-first (QuCPL) vs raw Qiskit notebooks",
+        cost: "Parser/compiler + IDE surface to maintain",
+        when: "Choose when beginners need a mental model, not an SDK tour",
+      },
+      {
+        option: "Node API between IDE and Python/Qiskit",
+        cost: "Two languages, two deploy units",
+        when: "Choose when the web IDE needs auth, history, and job queues the Python side shouldn't own",
+      },
+      {
+        option: "Noise-aware simulation as default",
+        cost: "Results look 'worse' than textbook ideal shots",
+        when: "Choose when the product is teaching hardware reality, not just gates",
+      },
+    ],
+    cut: [
+      "Full compiler IR / optimiser pass pipeline — openQASM output is enough for now",
+      "Multi-user collaborative editing (realtime CRDT) — classroom later",
+      "Mobile IDE — dense editor UX stays desktop-first",
+    ],
   },
   "personal-rag": {
     highlights: [
       "Hybrid retrieval (vector + BM25) instead of pure embeddings",
       "Multi-tenant workspaces with document chat and citations",
       "Local-first defaults with optional Ollama models",
+      "Memory + knowledge-graph foundations layered on the retrieval core",
+      "Ingest → chunk → embed → retrieve → orchestrate pipeline kept observable",
     ],
     next: [
       "Eval harness for retrieval regressions",
       "Knowledge-graph layer for entity-aware answers",
       "Simpler onboarding path for first documents",
+      "Cost/latency budgets per workspace tier",
     ],
     stackNotes: ["FastAPI", "PostgreSQL/pgvector", "Redis", "Ollama", "RAG"],
+    diagram: [
+      "Documents ─► Ingest ─► Chunk ─► Embed + Index",
+      "                                │",
+      "User ─► FastAPI gateway ─► Orchestrator",
+      "              │                 │",
+      "              │         Hybrid retrieve (vector + BM25)",
+      "              │                 │",
+      "              │         Memory + knowledge graph",
+      "              │                 │",
+      "              └──► LLM (Ollama / hosted) ─► cited answer",
+      "",
+      "PostgreSQL/pgvector  ·  Redis cache  ·  MinIO object store",
+    ],
+    tradeoffs: [
+      {
+        option: "Hybrid retrieval vs vector-only",
+        cost: "Two ranking paths + fusion logic to tune",
+        when: "Choose when exact identifiers (titles, IDs) matter as much as semantic similarity",
+      },
+      {
+        option: "Local-first (Ollama) vs hosted LLM by default",
+        cost: "Weaker models on modest laptops",
+        when: "Choose when privacy / offline / cost dominate quality for personal corpora",
+      },
+      {
+        option: "Multi-tenant workspaces in a personal assistant",
+        cost: "Auth + scoping bugs are product bugs, not infra bugs",
+        when: "Choose when the same system must serve study, work, and hobby docs without bleed",
+      },
+    ],
+    cut: [
+      "GraphRAG-style multi-hop agent loops — Agentic-RAG-PROD owns that experiment",
+      "SaaS billing / public signup — this stays a personal platform",
+      "Streaming chat polish as a blocker — citations + correctness first",
+    ],
   },
   "stock-signal-generator": {
     highlights: [
       "CLI backtesting engine with fee/slippage models",
       "Nine strategies with walk-forward optimization",
       "149 tests — the system fails loudly when a signal drifts",
+      "Bootstrap Monte Carlo for path-aware uncertainty",
+      "Multi-format reports: Sharpe, Sortino, drawdown, strategy comparison",
     ],
     next: [
       "Richer portfolio-level metrics",
       "Web UI for strategy comparison",
       "Live data adapters beyond historical CSVs",
+      "Walk-forward report exports that a non-quant can audit",
     ],
     stackNotes: ["Python", "Backtesting", "Monte Carlo", "CLI"],
+    diagram: [
+      "CLI",
+      " ├─ data provider + cache (Yahoo / CSV)",
+      " ├─ indicator engine (pandas/numPy)",
+      " ├─ strategy factory (9 presets)",
+      " ├─ backtest core",
+      " │    ├─ transaction model (fees + slippage)",
+      " │    ├─ walk-forward optimizer",
+      " │    └─ bootstrap Monte Carlo",
+      " └─ metrics + multi-format reports",
+      "",
+      "Hard rule: in-sample grid search is banned without a walk-forward window.",
+    ],
+    tradeoffs: [
+      {
+        option: "CLI-first research tool vs web dashboard",
+        cost: "Harder for non-engineers to explore live",
+        when: "Choose when reproducibility and audit trails matter more than demos",
+      },
+      {
+        option: "Realistic fees/slippage always on",
+        cost: "Headline returns shrink vs naive backtests",
+        when: "Choose when the output might tempt someone to trade it",
+      },
+      {
+        option: "Walk-forward over in-sample optimisation",
+        cost: "Slower runs, fewer 'best' parameter sets",
+        when: "Choose when overfitting is the actual failure mode you fear",
+      },
+    ],
+    cut: [
+      "Live broker execution — research tool, not advice or automation",
+      "High-frequency tick strategies — data + infrastructure cost explodes",
+      "ML price prediction as a flagship — companion project owns that honestly",
+    ],
   },
   "physics-playground": {
     highlights: [
       "Rigid-body lab with gravity, restitution, drag, and throw",
       "Live parameter panel — simulation as an interface, not a video",
       "Mobile-aware rendering (shadows off on small screens)",
+      "Preset scenes: earth, zero-g, magnet, pendulum + custom URL state",
+      "Drag-to-throw kinematics that hand off cleanly to dynamics",
     ],
     next: [
-      "Preset scenes: zero-g, magnet, pendulum",
-      "Shareable URL state for a given experiment",
-      "Telemetry overlays that show what was actually measured",
+      "Shared preset packs beyond the four defaults",
+      "Recorded trajectories for classroom replay",
+      "Energy/torque telemetry overlays tied to each body",
     ],
     stackNotes: ["Three.js", "R3F", "Rapier", "React"],
   },

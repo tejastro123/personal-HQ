@@ -1,31 +1,36 @@
 import { Link } from "@tanstack/react-router";
 import { geoNaturalEarth1, geoPath, type GeoProjection } from "d3-geo";
-import { ArrowUpRight, Minus, Plus, RotateCcw } from "lucide-react";
+import {
+  ArrowUpRight,
+  Github,
+  Minus,
+  Plus,
+  RotateCcw,
+  Search,
+  Sparkles,
+  X,
+} from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { feature } from "topojson-client";
 import type { Topology } from "topojson-specification";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Reveal, SectionHeading } from "@/components/reveal";
+import { SectionHeading } from "@/components/reveal";
+import { SectionStage } from "@/components/ui/section-stage";
+import { DepthReveal } from "@/components/ui/depth";
 import {
-  getProjectByCountryId,
+  categories,
+  getProjectsByCountryId,
   mapMetrics,
   projects,
+  type Category,
   type MapMetric,
   type Project,
 } from "@/data/projects";
+import { githubSnapshot, repoForProject } from "@/data/github-snapshot";
 import { cn } from "@/lib/utils";
 
 type CountryFeat = GeoJSON.Feature<GeoJSON.Geometry, { name: string }>;
-
-type TooltipState = {
-  x: number;
-  y: number;
-  name: string;
-  project?: Project;
-  metricLabel: string;
-  metricValue: number;
-};
 
 const MIN_K = 0.85;
 const MAX_K = 8;
@@ -36,6 +41,7 @@ const ARCH_NODES = [
   { id: "EU", lngLat: [10, 50] as [number, number] },
   { id: "JP", lngLat: [138, 36] as [number, number] },
   { id: "BR", lngLat: [-52, -10] as [number, number] },
+  { id: "UK", lngLat: [-2, 54] as [number, number] },
 ];
 
 function arcPath(
@@ -66,9 +72,9 @@ function colorAt(t: number, light: boolean) {
   return `rgb(${rgb.join(",")})`;
 }
 
-function metricValue(project: Project | undefined, metric: MapMetric) {
-  if (!project) return 0;
-  return project.metrics[metric];
+function repoName(p: Project) {
+  const snap = repoForProject(p.github);
+  return snap?.name ?? p.github?.split("/").filter(Boolean).pop() ?? p.title;
 }
 
 export function WorldMap() {
@@ -76,10 +82,18 @@ export function WorldMap() {
   const [size, setSize] = useState({ w: 960, h: 520 });
   const [countries, setCountries] = useState<CountryFeat[]>([]);
   const [metric, setMetric] = useState<MapMetric>("innovationScore");
+  const [category, setCategory] = useState<Category>("All");
+  const [query, setQuery] = useState("");
   const [transform, setTransform] = useState({ x: 0, y: 0, k: 1 });
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [selected, setSelected] = useState<Project | null>(null);
-  const [selectedName, setSelectedName] = useState<string | null>(null);
-  const [tip, setTip] = useState<TooltipState | null>(null);
+  const [tip, setTip] = useState<{
+    x: number;
+    y: number;
+    title: string;
+    subtitle?: string;
+    project?: Project;
+  } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [light, setLight] = useState(false);
   const drag = useRef<{ x: number; y: number; tx: number; ty: number } | null>(null);
@@ -91,7 +105,7 @@ export function WorldMap() {
     if (!el) return;
     const ro = new ResizeObserver(() => {
       const r = el.getBoundingClientRect();
-      setSize({ w: Math.max(320, r.width), h: Math.max(360, Math.round(r.width * 0.55)) });
+      setSize({ w: Math.max(320, r.width), h: Math.max(380, Math.round(r.width * 0.52)) });
     });
     ro.observe(el);
     return () => ro.disconnect();
@@ -152,12 +166,87 @@ export function WorldMap() {
 
   const path = useMemo(() => geoPath(projection as GeoProjection), [projection]);
 
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return projects.filter((p) => {
+      if (category !== "All" && p.category !== category) return false;
+      if (!q) return true;
+      const hay = [
+        p.title,
+        p.category,
+        p.country,
+        p.status,
+        p.github ?? "",
+        ...p.technologies,
+      ]
+        .join(" ")
+        .toLowerCase();
+      return hay.includes(q);
+    });
+  }, [category, query]);
+
+  /** Aggregate filtered projects by country for heat + badges. */
+  const byCountry = useMemo(() => {
+    const map = new Map<string, Project[]>();
+    for (const p of filtered) {
+      const key = String(p.countryId);
+      const list = map.get(key) ?? [];
+      list.push(p);
+      map.set(key, list);
+    }
+    return map;
+  }, [filtered]);
+
   const domain = useMemo(() => {
-    const vals = projects.map((p) => p.metrics[metric]);
+    const vals = filtered.map((p) => p.metrics[metric]);
+    if (!vals.length) return [0, 1] as const;
     return [Math.min(...vals, 0), Math.max(...vals, 1)] as const;
-  }, [metric]);
+  }, [filtered, metric]);
 
   const metricLabel = mapMetrics.find((m) => m.id === metric)?.label ?? metric;
+
+  const markers = useMemo(() => {
+    return filtered.map((p) => {
+      const pt = projection(p.countryLngLat ?? [0, 0]);
+      return { project: p, x: pt?.[0] ?? -999, y: pt?.[1] ?? -999 };
+    });
+  }, [filtered, projection]);
+
+  /** Nudge overlapping same-country markers into a small ring. */
+  const markerPositions = useMemo(() => {
+    const groups = new Map<string, { project: Project; x: number; y: number }[]>();
+    for (const m of markers) {
+      if (m.x < 0) continue;
+      const key = String(m.project.countryId);
+      const list = groups.get(key) ?? [];
+      list.push(m);
+      groups.set(key, list);
+    }
+    const out = new Map<string, { project: Project; x: number; y: number }>();
+    for (const [, list] of groups) {
+      if (list.length === 1) {
+        out.set(list[0]!.project.id, list[0]!);
+        continue;
+      }
+      list.forEach((m, i) => {
+        const a = (i / list.length) * Math.PI * 2;
+        const r = 7 + (i % 3) * 2.5;
+        out.set(m.project.id, {
+          project: m.project,
+          x: m.x + Math.cos(a) * r * 0.35,
+          y: m.y + Math.sin(a) * r * 0.35,
+        });
+      });
+    }
+    return out;
+  }, [markers]);
+
+  const stats = useMemo(() => {
+    const countriesCount = byCountry.size;
+    const repos = filtered.filter((p) => p.github).length;
+    const featured = filtered.filter((p) => p.featured).length;
+    return { total: filtered.length, countriesCount, repos, featured };
+  }, [filtered, byCountry]);
 
   const applyZoom = useCallback((nextK: number, cx: number, cy: number) => {
     setTransform((t) => {
@@ -221,48 +310,127 @@ export function WorldMap() {
     if (pointers.current.size === 0) drag.current = null;
   }
 
-  function selectCountry(f: CountryFeat, name: string) {
-    const id = String(f.id ?? "");
-    const project = getProjectByCountryId(id);
-    setSelected(project ?? null);
-    setSelectedName(name);
+  function selectCountry(countryId: string) {
+    setSelectedCountry(countryId);
+    const list = getProjectsByCountryId(countryId).filter((p) => {
+      if (category !== "All" && p.category !== category) return false;
+      if (!query.trim()) return true;
+      return filtered.some((f) => f.id === p.id);
+    });
+    setSelected(list[0] ?? null);
   }
 
-  const markers = projects.filter((p) => p.countryLngLat);
+  function clearSelection() {
+    setSelectedCountry(null);
+    setSelected(null);
+  }
+
+  const countryProjects = selectedCountry
+    ? filtered.filter((p) => String(p.countryId) === selectedCountry)
+    : [];
 
   return (
-    <section id="world" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal>
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeading
-              eyebrow="Where my ideas live."
-              title="Projects Around the World"
-              subtitle="Explore the projects, technologies, and research behind my work — mapped from real GitHub repos on this site."
-            />
-            <Badge variant="accent">Real project</Badge>
+    <SectionStage id="world" variant="cool">
+      <DepthReveal rotate={5}>
+        <div className="section-heading-hud flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading
+            eyebrow="Where my ideas live."
+            title="Projects Around the World"
+            subtitle="Every mapped GitHub repo — filter by category, search tech, click a country to open its project stack."
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant="accent">
+              <Sparkles className="mr-1 size-3" />
+              {githubSnapshot.user?.publicRepos ?? projects.length} public repos
+            </Badge>
+            <Badge>{stats.countriesCount} countries</Badge>
           </div>
-        </Reveal>
+        </div>
+      </DepthReveal>
 
-        <div className="mt-8 flex flex-wrap gap-2">
-          {mapMetrics.map((m) => (
+      {/* Toolbar */}
+      <div className="mt-8 flex flex-col gap-3">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap gap-2">
+            {mapMetrics.map((m) => (
+              <button
+                key={m.id}
+                type="button"
+                onClick={() => setMetric(m.id)}
+                className={cn(
+                  "h-9 rounded-full border px-3.5 text-xs transition-colors duration-150 sm:text-sm",
+                  metric === m.id
+                    ? "border-foreground bg-foreground text-background"
+                    : "border-border bg-card text-muted-foreground hover:text-foreground",
+                )}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
+          <div className="relative w-full max-w-xs">
+            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-subtle" />
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search projects, tech, repos…"
+              className="h-10 w-full rounded-full border border-border bg-card pl-9 pr-9 text-sm text-foreground shadow-[var(--shadow-border)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            />
+            {query ? (
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1 text-subtle hover:text-foreground"
+                aria-label="Clear search"
+              >
+                <X className="size-3.5" />
+              </button>
+            ) : null}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-1.5">
+          {categories.map((c) => (
             <button
-              key={m.id}
+              key={c}
               type="button"
-              onClick={() => setMetric(m.id)}
+              onClick={() => setCategory(c)}
               className={cn(
-                "h-10 rounded-full border px-4 text-sm transition-colors duration-150",
-                metric === m.id
-                  ? "border-foreground bg-foreground text-background"
-                  : "border-border bg-card text-muted-foreground hover:text-foreground",
+                "rounded-full border px-3 py-1 text-xs transition-colors duration-150",
+                category === c
+                  ? "border-accent bg-accent-soft text-accent"
+                  : "border-border bg-card/60 text-muted-foreground hover:text-foreground",
               )}
             >
-              {m.label}
+              {c}
             </button>
           ))}
         </div>
+      </div>
 
-        <div className="relative mt-6">
+      {/* Stats strip */}
+      <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        {[
+          { label: "Projects shown", value: stats.total },
+          { label: "Countries", value: stats.countriesCount },
+          { label: "With GitHub", value: stats.repos },
+          { label: "Featured", value: stats.featured },
+        ].map((s) => (
+          <div
+            key={s.label}
+            className="rounded-xl border border-border/80 bg-card/50 px-3 py-2.5 backdrop-blur"
+          >
+            <p className="mono text-lg tabular-nums text-foreground">{s.value}</p>
+            <p className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+              {s.label}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-6 grid gap-4 xl:grid-cols-[1fr_20rem]">
+        {/* Map */}
+        <div className="relative">
           <div
             ref={wrap}
             className="relative overflow-hidden rounded-xl border border-border bg-background-secondary touch-none"
@@ -273,29 +441,47 @@ export function WorldMap() {
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerUp}
             role="application"
-            aria-label="Interactive world map"
+            aria-label="Interactive world map of projects"
           >
             {error ? (
               <p className="p-6 text-sm text-status">{error}</p>
             ) : (
               <svg width={size.w} height={size.h} className="block h-full w-full">
+                <defs>
+                  <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.9" />
+                    <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
+                  </radialGradient>
+                </defs>
                 <g transform={`translate(${transform.x} ${transform.y}) scale(${transform.k})`}>
                   {countries.map((f, i) => {
                     const id = String(f.id ?? i);
                     const name = f.properties?.name ?? "Unknown";
-                    const project = getProjectByCountryId(id);
-                    const v = metricValue(project, metric);
+                    const list = byCountry.get(id) ?? [];
+                    const avg = list.length
+                      ? list.reduce((s, p) => s + p.metrics[metric], 0) / list.length
+                      : 0;
                     const t =
-                      domain[1] === domain[0] ? 0 : (v - domain[0]) / (domain[1] - domain[0]);
+                      domain[1] === domain[0] ? 0 : (avg - domain[0]) / (domain[1] - domain[0]);
                     const d = path(f) ?? "";
-                    const active = selectedName === name;
+                    const active = selectedCountry === id;
                     return (
                       <path
                         key={id}
                         d={d}
-                        fill={project ? colorAt(t, light) : colorAt(0.06, light)}
-                        stroke={active ? "var(--foreground)" : "var(--background)"}
-                        strokeWidth={active ? 1.6 / transform.k : 0.4 / transform.k}
+                        fill={
+                          list.length
+                            ? colorAt(list.length > 1 ? Math.min(1, 0.45 + t * 0.55) : t, light)
+                            : colorAt(0.05, light)
+                        }
+                        stroke={
+                          active
+                            ? "var(--accent)"
+                            : list.length
+                              ? "color-mix(in oklab, var(--accent) 35%, var(--border))"
+                              : "var(--background)"
+                        }
+                        strokeWidth={active ? 1.8 / transform.k : list.length ? 0.7 / transform.k : 0.4 / transform.k}
                         className="cursor-pointer"
                         onPointerEnter={(e) => {
                           const rect = wrap.current?.getBoundingClientRect();
@@ -303,15 +489,15 @@ export function WorldMap() {
                           setTip({
                             x: e.clientX - rect.left,
                             y: e.clientY - rect.top,
-                            name,
-                            project,
-                            metricLabel,
-                            metricValue: v,
+                            title: name,
+                            subtitle: list.length
+                              ? `${list.length} project${list.length === 1 ? "" : "s"} · ${metricLabel} ${Math.round(avg)}`
+                              : "No projects mapped",
                           });
                         }}
                         onPointerMove={(e) => {
                           const rect = wrap.current?.getBoundingClientRect();
-                          if (!rect || !tip) return;
+                          if (!rect) return;
                           setTip((prev) =>
                             prev
                               ? { ...prev, x: e.clientX - rect.left, y: e.clientY - rect.top }
@@ -319,7 +505,7 @@ export function WorldMap() {
                           );
                         }}
                         onPointerLeave={() => setTip(null)}
-                        onClick={() => selectCountry(f, name)}
+                        onClick={() => list.length && selectCountry(id)}
                       />
                     );
                   })}
@@ -332,6 +518,8 @@ export function WorldMap() {
                       ["EU", "JP"],
                       ["US", "BR"],
                       ["IN", "EU"],
+                      ["UK", "IN"],
+                      ["US", "UK"],
                     ];
                     return edges.map(([from, to]) => {
                       const a = ARCH_NODES.find((n) => n.id === from);
@@ -345,26 +533,24 @@ export function WorldMap() {
                           d={d}
                           fill="none"
                           stroke="var(--accent)"
-                          strokeWidth={1.1 / transform.k}
+                          strokeWidth={1 / transform.k}
                           strokeLinecap="round"
                           className="map-arc"
-                          opacity={0.55}
+                          opacity={0.4}
                         />
                       );
                     });
                   })()}
-                  {markers.map((p) => {
-                    const pt = projection(p.countryLngLat!);
-                    if (!pt) return null;
+                  {[...markerPositions.values()].map(({ project: p, x, y }) => {
                     const active = selected?.id === p.id;
                     return (
                       <g
                         key={p.id}
-                        transform={`translate(${pt[0]}, ${pt[1]})`}
+                        transform={`translate(${x}, ${y})`}
                         className="cursor-pointer"
                         onClick={() => {
                           setSelected(p);
-                          setSelectedName(p.country);
+                          setSelectedCountry(String(p.countryId));
                         }}
                         onPointerEnter={(e) => {
                           const rect = wrap.current?.getBoundingClientRect();
@@ -372,19 +558,28 @@ export function WorldMap() {
                           setTip({
                             x: e.clientX - rect.left,
                             y: e.clientY - rect.top,
-                            name: p.country,
+                            title: p.title,
+                            subtitle: `${repoName(p)} · ${p.country}`,
                             project: p,
-                            metricLabel,
-                            metricValue: p.metrics[metric],
                           });
                         }}
                         onPointerLeave={() => setTip(null)}
                       >
+                        <circle r={10 / transform.k} fill="url(#mapGlow)" opacity={0.55} />
+                        {active ? (
+                          <circle
+                            r={12 / transform.k}
+                            fill="none"
+                            stroke="var(--accent)"
+                            strokeWidth={1.2 / transform.k}
+                            className="map-ping"
+                          />
+                        ) : null}
                         <circle
-                          r={active ? 7 / transform.k : 5 / transform.k}
-                          fill="var(--accent)"
+                          r={(active ? 5.5 : 3.8) / transform.k}
+                          fill={p.featured ? "var(--accent-warm)" : "var(--accent)"}
                           stroke="var(--background)"
-                          strokeWidth={1.5 / transform.k}
+                          strokeWidth={1.4 / transform.k}
                         />
                       </g>
                     );
@@ -395,25 +590,22 @@ export function WorldMap() {
 
             {tip ? (
               <div
-                className="pointer-events-none absolute z-10 w-56 rounded-md border border-border bg-card p-3 text-xs shadow-[var(--shadow-lift)]"
+                className="pointer-events-none absolute z-10 w-60 rounded-md border border-border bg-card p-3 text-xs shadow-[var(--shadow-lift)] backdrop-blur"
                 style={{
-                  left: Math.min(tip.x + 14, size.w - 230),
-                  top: Math.min(tip.y + 14, size.h - 120),
+                  left: Math.min(tip.x + 14, size.w - 250),
+                  top: Math.min(tip.y + 14, size.h - 140),
                 }}
               >
-                <p className="font-medium text-foreground">{tip.name}</p>
-                <p className="mt-1 text-muted-foreground">
-                  {tip.project ? tip.project.title : "No project mapped"}
-                </p>
+                <p className="font-medium text-foreground">{tip.title}</p>
+                {tip.subtitle ? (
+                  <p className="mt-1 text-muted-foreground">{tip.subtitle}</p>
+                ) : null}
                 {tip.project ? (
                   <>
-                    <p className="mt-1 text-subtle">{tip.project.category}</p>
-                    <p className="mt-1 tabular-nums text-foreground">
-                      {tip.metricLabel}: {tip.metricValue}
-                    </p>
                     <p className="mt-1 line-clamp-2 text-muted-foreground">
                       {tip.project.description}
                     </p>
+                    <p className="mt-1.5 text-accent">{metricLabel}: {tip.project.metrics[metric]}</p>
                   </>
                 ) : null}
               </div>
@@ -422,7 +614,7 @@ export function WorldMap() {
             <div className="absolute bottom-3 left-3 right-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div className="rounded-md border border-border bg-card/90 px-3 py-2 backdrop-blur">
                 <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                  Low — High
+                  Low — High · {metricLabel}
                 </p>
                 <div
                   className="mt-1 h-2 w-40 rounded-full"
@@ -459,66 +651,123 @@ export function WorldMap() {
               </div>
             </div>
           </div>
+        </div>
 
-          {selectedName ? (
-            <aside
-              className={cn(
-                "z-20 border border-border bg-card shadow-[var(--shadow-lift)]",
-                "fixed inset-x-0 bottom-0 max-h-[70dvh] overflow-auto rounded-t-xl p-5",
-                "md:absolute md:inset-y-3 md:right-3 md:bottom-auto md:left-auto md:max-h-[calc(100%-24px)] md:w-[22rem] md:rounded-xl",
-              )}
-            >
-              <div className="flex items-start justify-between gap-3">
+        {/* Side rail: country stack + project list */}
+        <aside className="flex flex-col gap-3">
+          <div className="rounded-xl border border-border bg-card/70 p-4 shadow-[var(--shadow-border)] backdrop-blur">
+            <div className="flex items-center justify-between gap-2">
+              <h3 className="font-display text-lg tracking-tight">
+                {selectedCountry
+                  ? countryProjects[0]?.country ?? "Selected country"
+                  : "All projects"}
+              </h3>
+              {selectedCountry ? (
+                <button
+                  type="button"
+                  onClick={clearSelection}
+                  className="text-xs text-muted-foreground hover:text-foreground"
+                >
+                  Clear
+                </button>
+              ) : null}
+            </div>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {selectedCountry
+                ? `${countryProjects.length} mapped project${countryProjects.length === 1 ? "" : "s"}`
+                : `${filtered.length} in current filter · click a country or pin`}
+            </p>
+
+            {(selectedCountry ? countryProjects : filtered.slice(0, 8)).map((p) => (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => {
+                  setSelected(p);
+                  setSelectedCountry(String(p.countryId));
+                }}
+                className={cn(
+                  "mt-2 w-full rounded-lg border px-3 py-2 text-left transition-colors",
+                  selected?.id === p.id
+                    ? "border-accent/50 bg-accent-soft"
+                    : "border-border/70 bg-background/40 hover:border-border-strong",
+                )}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-medium text-foreground">{p.title}</p>
+                    <p className="truncate text-[11px] text-muted-foreground">
+                      {repoName(p)} · {p.category}
+                    </p>
+                  </div>
+                  {p.featured ? (
+                    <span className="mono shrink-0 rounded-full bg-accent-warm/15 px-2 py-0.5 text-[10px] text-accent-warm">
+                      ★
+                    </span>
+                  ) : null}
+                </div>
+              </button>
+            ))}
+            {!filtered.length ? (
+              <p className="mt-3 text-sm text-muted-foreground">No projects match this filter.</p>
+            ) : null}
+            {filtered.length > 8 && !selectedCountry ? (
+              <p className="mt-2 text-[11px] text-subtle">
+                +{filtered.length - 8} more — refine search or click the map
+              </p>
+            ) : null}
+          </div>
+
+          {selected ? (
+            <div className="rounded-xl border border-border bg-card p-4 shadow-[var(--shadow-lift)]">
+              <div className="flex items-start justify-between gap-2">
                 <div>
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-                    {selectedName}
+                  <p className="text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                    {selected.country}
                   </p>
-                  <h3 className="mt-1 font-display text-2xl tracking-tight">
-                    {selected?.title ?? "No project mapped"}
-                  </h3>
+                  <h4 className="mt-1 font-display text-xl tracking-tight">{selected.title}</h4>
                 </div>
                 <button
                   type="button"
+                  onClick={() => setSelected(null)}
                   className="text-sm text-muted-foreground"
-                  onClick={() => {
-                    setSelected(null);
-                    setSelectedName(null);
-                  }}
                 >
-                  Close
+                  <X className="size-4" />
                 </button>
               </div>
-              {selected ? (
-                <>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    <Badge>{selected.category}</Badge>
-                    <Badge>{selected.status}</Badge>
-                    <span className="text-xs tabular-nums text-subtle">{selected.year}</span>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    {selected.description}
-                  </p>
-                  <p className="mt-3 text-xs text-subtle">{selected.technologies.join(" · ")}</p>
-                  <p className="mt-3 text-xs tabular-nums text-muted-foreground">
-                    {metricLabel}: {selected.metrics[metric]}
-                  </p>
-                  <Button asChild className="mt-6 w-full">
-                    <Link to="/projects/$id" params={{ id: selected.id }}>
-                      View Project
-                      <ArrowUpRight />
-                    </Link>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Badge>{selected.category}</Badge>
+                <Badge>{selected.status}</Badge>
+                <span className="text-xs tabular-nums text-subtle">{selected.year}</span>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {selected.description}
+              </p>
+              <p className="mt-2 text-xs text-subtle">{selected.technologies.join(" · ")}</p>
+              <p className="mt-2 text-xs tabular-nums text-muted-foreground">
+                {metricLabel}: {selected.metrics[metric]}
+              </p>
+              <div className="mt-4 flex flex-col gap-2">
+                <Button asChild className="w-full">
+                  <Link to="/projects/$id" params={{ id: selected.id }}>
+                    View Project
+                    <ArrowUpRight />
+                  </Link>
+                </Button>
+                {selected.github ? (
+                  <Button asChild variant="outline" className="w-full">
+                    <a href={selected.github} target="_blank" rel="noreferrer">
+                      <Github className="size-4" />
+                      GitHub repo
+                    </a>
                   </Button>
-                </>
-              ) : (
-                <p className="mt-4 text-sm text-muted-foreground">
-                  This country has no project mapped yet.
-                </p>
-              )}
-            </aside>
+                ) : null}
+              </div>
+            </div>
           ) : null}
-        </div>
+        </aside>
       </div>
-    </section>
+    </SectionStage>
   );
 }
 

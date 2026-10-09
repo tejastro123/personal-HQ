@@ -51,9 +51,8 @@ export function getSocialLinks() {
 export const navItems = [
   { label: "Home", hash: "home", to: "/" as const },
   { label: "Work", hash: "work", to: "/" as const },
-  { label: "About", hash: "about", to: "/" as const },
-  { label: "Skills", hash: "skills", to: "/" as const },
-  { label: "World", hash: "world", to: "/" as const },
+  { label: "Instruments", hash: undefined, to: "/instruments" as const },
+  { label: "Systems", hash: undefined, to: "/systems" as const },
   { label: "Blog", hash: undefined, to: "/blog" as const },
   { label: "Playground", hash: undefined, to: "/playground" as const },
   { label: "Contact", hash: "contact", to: "/" as const },

@@ -1,9 +1,9 @@
-import { i as __toESM, r as __require, t as __commonJSMin } from "../../_runtime.mjs";
+import { i as __require, o as __toESM, t as __commonJSMin } from "../../_runtime.mjs";
 import { r as require_react } from "../@hookform/resolvers+[...].mjs";
-import { i as parseHref, r as normalizeProtocolRelative } from "../tanstack__history.mjs";
 import { n as require_jsx_runtime } from "../radix-ui__react-context+react.mjs";
-import { y as require_with_selector } from "../@react-three/drei+[...].mjs";
-import { o as require_react_dom } from "../@radix-ui/react-dialog+[...].mjs";
+import { s as require_react_dom } from "../@radix-ui/react-dialog+[...].mjs";
+import { i as parseHref, r as normalizeProtocolRelative } from "../tanstack__history.mjs";
+import { S as require_with_selector } from "../@react-three/drei+[...].mjs";
 import { PassThrough, Readable } from "node:stream";
 //#region node_modules/@tanstack/router-core/dist/esm/not-found.js
 /** Determine if a value is a TanStack Router not-found error. */
@@ -48,6 +48,10 @@ function redirect(opts) {
 /** Check whether a value is a TanStack Router redirect Response. */
 function isRedirect(obj) {
 	return obj instanceof Response && !!obj.options;
+}
+/** Parse a serialized redirect object back into a redirect Response. */
+function parseRedirect(obj) {
+	if (obj !== null && typeof obj === "object" && obj.isSerializedRedirect) return redirect(obj);
 }
 //#endregion
 //#region node_modules/@tanstack/router-core/dist/esm/ssr/ssr-match-id.js
@@ -3519,6 +3523,7 @@ var BaseRootRoute = class extends BaseRoute {
 };
 //#endregion
 //#region node_modules/seroval/dist/index.js
+var import_jsx_runtime = require_jsx_runtime();
 var SYM_ASYNC_ITERATOR = Symbol.asyncIterator;
 var SYM_HAS_INSTANCE = Symbol.hasInstance;
 var SYM_IS_CONCAT_SPREADABLE = Symbol.isConcatSpreadable;
@@ -6182,7 +6187,6 @@ function fromJSON(source, options = {}) {
 }
 //#endregion
 //#region node_modules/@tanstack/react-router/dist/esm/CatchBoundary.js
-var import_jsx_runtime = require_jsx_runtime();
 var CatchBoundary = class extends import_react.Component {
 	constructor(..._args) {
 		super(..._args);
@@ -17445,4 +17449,4 @@ var renderRouterToStream = async ({ request, router, responseHeaders, children }
 	}
 };
 //#endregion
-export { toCrossJSONStream as A, invariant as B, useRouter as C, fromJSON as D, crossSerializeStream as E, resolveManifestAssetLink as F, dehydrateSsrMatchId as G, decodePath as H, resolveManifestCssLink as I, isNotFound as J, isRedirect as K, waitForReason as L, createInlineCssStyleAsset as M, getScriptPreloadAttrs as N, isStream as O, getStylesheetHref as P, _getRenderedMatches as R, useNavigate as S, createStream as T, isDangerousProtocol as U, createSieveCache as V, isPromise as W, Outlet as _, isSsrResponse as a, createRootRoute as b, stripSsrResponseBody as c, Scripts as d, HeadContent as f, createRouter as g, RouterProvider as h, disposeSsrResponse as i, createInlineCssPlaceholderAsset as j, toCrossJSONAsync as k, createHydrationScripts as l, useRouterState as m, bindSsrResponseToRequest as n, normalizeSsrResponse as o, useLocation as p, rootRouteId as q, defineHandlerCallback as r, replaceSsrResponse as s, renderRouterToStream as t, GLOBAL_TSR as u, lazyRouteComponent as v, createPlugin as w, Link as x, createFileRoute as y, executeRewriteInput as z };
+export { toCrossJSONAsync as A, executeRewriteInput as B, useSearch as C, crossSerializeStream as D, createStream as E, getStylesheetHref as F, isPromise as G, createSieveCache as H, resolveManifestAssetLink as I, parseRedirect as J, dehydrateSsrMatchId as K, resolveManifestCssLink as L, createInlineCssPlaceholderAsset as M, createInlineCssStyleAsset as N, fromJSON as O, getScriptPreloadAttrs as P, waitForReason as R, useNavigate as S, createPlugin as T, decodePath as U, invariant as V, isDangerousProtocol as W, isNotFound as X, rootRouteId as Y, Outlet as _, isSsrResponse as a, createRootRoute as b, stripSsrResponseBody as c, Scripts as d, HeadContent as f, createRouter as g, RouterProvider as h, disposeSsrResponse as i, toCrossJSONStream as j, isStream as k, createHydrationScripts as l, useRouterState as m, bindSsrResponseToRequest as n, normalizeSsrResponse as o, useLocation as p, isRedirect as q, defineHandlerCallback as r, replaceSsrResponse as s, renderRouterToStream as t, GLOBAL_TSR as u, lazyRouteComponent as v, useRouter as w, Link as x, createFileRoute as y, _getRenderedMatches as z };

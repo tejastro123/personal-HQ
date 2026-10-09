@@ -3,8 +3,9 @@ import { ArrowUpRight } from "lucide-react";
 import { SiteShell } from "@/components/layout/site-shell";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { posts, readingMinutes } from "@/data/blog";
+import { readingMinutes } from "@/data/blog";
 import { site } from "@/data/site";
+import { usePublicPosts } from "@/lib/use-public-content";
 
 export const Route = createFileRoute("/blog")({ component: BlogRoute });
 
@@ -13,6 +14,7 @@ function BlogRoute() {
   const isDetail = matches.some(
     (m) => m.routeId === "/blog/$slug" || m.id?.endsWith("/blog/$slug"),
   );
+  const posts = usePublicPosts();
   if (isDetail) return <Outlet />;
 
   return (

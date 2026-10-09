@@ -25,6 +25,14 @@ import * as THREE from "three";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { site } from "@/data/site";
+import {
+  deleteExperiment,
+  downloadExperimentCsv,
+  loadExperiments,
+  saveExperiment,
+  type ExperimentSample,
+  type SavedExperiment,
+} from "@/data/experiments";
 
 type Shape = "sphere" | "box" | "cylinder" | "capsule";
 
@@ -36,12 +44,40 @@ type BodySpec = {
 
 type PresetId = "earth" | "zero-g" | "magnet" | "pendulum" | "custom";
 
-const PRESETS: Record<PresetId, { label: string; gravity: number; restitution: number }> = {
-  earth: { label: "Earth", gravity: 9.81, restitution: 0.65 },
-  "zero-g": { label: "Zero-g", gravity: 0, restitution: 0.95 },
-  magnet: { label: "Magnet", gravity: 3.2, restitution: 0.12 },
-  pendulum: { label: "Pendulum", gravity: 4.5, restitution: 0.04 },
-  custom: { label: "Custom", gravity: 9.81, restitution: 0.65 },
+const PRESETS: Record<
+  PresetId,
+  { label: string; gravity: number; restitution: number; blurb: string }
+> = {
+  earth: {
+    label: "Earth",
+    gravity: 9.81,
+    restitution: 0.65,
+    blurb: "Standard surface gravity — bouncy enough to read energy loss on impact.",
+  },
+  "zero-g": {
+    label: "Zero-g",
+    gravity: 0,
+    restitution: 0.95,
+    blurb: "No gravity. Bodies drift and keep almost all kinetic energy on hits.",
+  },
+  magnet: {
+    label: "Magnet",
+    gravity: 3.2,
+    restitution: 0.12,
+    blurb: "Heavy pull, dead collisions — sticky landings, quick settle.",
+  },
+  pendulum: {
+    label: "Pendulum",
+    gravity: 4.5,
+    restitution: 0.04,
+    blurb: "Soft gravity, inelastic floor — motion dies fast into a calm rest.",
+  },
+  custom: {
+    label: "Custom",
+    gravity: 9.81,
+    restitution: 0.65,
+    blurb: "You set g and restitution. URL keeps the experiment shareable.",
+  },
 };
 
 const PRESET_ORDER: PresetId[] = ["earth", "zero-g", "magnet", "pendulum"];
@@ -125,8 +161,50 @@ export default function PhysicsPlayground() {
   ]);
   const [fps, setFps] = useState(0);
   const [dragging, setDragging] = useState(false);
+  const [journalOpen, setJournalOpen] = useState(false);
+  const [experiments, setExperiments] = useState<SavedExperiment[]>([]);
+  const samplesRef = useRef<ExperimentSample[]>([]);
+  const startedAtRef = useRef<number>(0);
   const isMobile = useIsMobile();
   const cap = isMobile ? 24 : 48;
+
+  useEffect(() => {
+    setExperiments(loadExperiments());
+  }, []);
+
+  useEffect(() => {
+    if (!startedAtRef.current) startedAtRef.current = performance.now();
+    const id = window.setInterval(() => {
+      if (paused) return;
+      samplesRef.current.push({
+        tMs: Math.round(performance.now() - startedAtRef.current),
+        objects: bodies.length,
+        fps,
+        gravity,
+        restitution,
+        paused: 0,
+      });
+      if (samplesRef.current.length > 2000) samplesRef.current.shift();
+    }, 250);
+    return () => window.clearInterval(id);
+  }, [paused, bodies.length, fps, gravity, restitution]);
+
+  const saveExperimentNow = useCallback(() => {
+    const samples = samplesRef.current.slice();
+    if (!samples.length) return;
+    const exp: SavedExperiment = {
+      id: `exp-${Date.now()}`,
+      name: `${preset}-${Math.round(gravity)}g-${samples.length}samp`,
+      preset,
+      gravity,
+      restitution,
+      createdAt: new Date().toISOString(),
+      samples,
+    };
+    setExperiments(saveExperiment(exp));
+    samplesRef.current = [];
+    startedAtRef.current = performance.now();
+  }, [preset, gravity, restitution]);
 
   useEffect(() => {
     writePresetToUrl(preset, gravity, restitution);
@@ -180,8 +258,16 @@ export default function PhysicsPlayground() {
               Drop objects. Break things. Learn how the system behaves.
             </p>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="pointer-events-auto flex items-center gap-1">
             <ThemeToggle />
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => setJournalOpen((v) => !v)}
+              data-testid="journal-toggle"
+            >
+              Journal
+            </Button>
             <Button asChild size="sm" variant="outline">
               <Link to="/">Home</Link>
             </Button>
@@ -211,6 +297,19 @@ export default function PhysicsPlayground() {
             preset={preset}
           />
         </div>
+        {journalOpen ? (
+          <ExperimentJournal
+            samples={samplesRef.current.length}
+            experiments={experiments}
+            onSave={saveExperimentNow}
+            onDelete={(id) => setExperiments(deleteExperiment(id))}
+            onExport={(exp) => downloadExperimentCsv(exp)}
+            onClearSamples={() => {
+              samplesRef.current = [];
+              startedAtRef.current = performance.now();
+            }}
+          />
+        ) : null}
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 hidden justify-between px-8 text-[10px] uppercase tracking-[0.18em] text-subtle md:flex">
@@ -437,6 +536,7 @@ function Toolbar({
             key={id}
             type="button"
             data-preset={id}
+            title={PRESETS[id].blurb}
             onClick={() => onPreset(id)}
             className={
               preset === id
@@ -448,6 +548,9 @@ function Toolbar({
           </button>
         ))}
       </div>
+      <p className="mt-2 max-w-md text-[11px] leading-relaxed text-muted-foreground">
+        {PRESETS[preset]?.blurb}
+      </p>
       <div className="mt-3 flex flex-wrap gap-1.5">
         <Tool onClick={() => onSpawn("sphere")} icon={<Circle className="size-4" />} label="Sphere" />
         <Tool onClick={() => onSpawn("box")} icon={<Box className="size-4" />} label="Box" />
@@ -536,6 +639,7 @@ function Stats({
   paused: boolean;
   preset: PresetId;
 }) {
+  const energyClass = restitution >= 0.8 ? "text-[var(--status-active)]" : restitution >= 0.4 ? "text-accent" : "text-accent-warm";
   return (
     <dl className="grid min-w-[12rem] grid-cols-2 gap-x-4 gap-y-1 rounded-xl border border-border bg-card/90 px-4 py-3 font-mono text-[11px] tabular-nums shadow-[var(--shadow-lift)] backdrop-blur-md">
       <dt className="text-subtle">Objects</dt>
@@ -543,14 +647,106 @@ function Stats({
       <dt className="text-subtle">FPS</dt>
       <dd>{fps || "—"}</dd>
       <dt className="text-subtle">Gravity</dt>
-      <dd>{gravity.toFixed(2)} m/s²</dd>
+      <dd data-testid="telemetry-gravity" className={gravity === 0 ? "text-accent-2" : "text-foreground"}>
+        {gravity.toFixed(2)} m/s²
+      </dd>
       <dt className="text-subtle">Restitution</dt>
-      <dd>{restitution.toFixed(2)}</dd>
+      <dd data-testid="telemetry-restitution" className={energyClass}>
+        {restitution.toFixed(2)}
+        <span className="ml-1 text-subtle">
+          {" "}
+          {restitution >= 0.8 ? "elastic" : restitution >= 0.4 ? "mixed" : "dead"}
+        </span>
+      </dd>
       <dt className="text-subtle">Simulation</dt>
-      <dd>{paused ? "Paused" : "Running"}</dd>
+      <dd className={paused ? "text-accent-warm" : "text-[var(--status-active)]"}>
+        {paused ? "Paused" : "Running"}
+      </dd>
       <dt className="text-subtle">Preset</dt>
       <dd data-testid="preset-label">{PRESETS[preset] ? PRESETS[preset].label : "Custom"}</dd>
     </dl>
+  );
+}
+
+function ExperimentJournal({
+  samples,
+  experiments,
+  onSave,
+  onDelete,
+  onExport,
+  onClearSamples,
+}: {
+  samples: number;
+  experiments: SavedExperiment[];
+  onSave: () => void;
+  onDelete: (id: string) => void;
+  onExport: (exp: SavedExperiment) => void;
+  onClearSamples: () => void;
+}) {
+  return (
+    <div
+      data-testid="experiment-journal"
+      className="pointer-events-auto max-w-xl rounded-xl border border-border bg-card/95 p-4 shadow-[var(--shadow-lift)] backdrop-blur-md"
+    >
+      <div className="flex items-center justify-between gap-2">
+        <h2 className="font-display text-sm tracking-tight">Experiment Journal</h2>
+        <span className="mono text-[11px] text-subtle">{samples} samples buffered</span>
+      </div>
+      <p className="mt-1 text-[11px] text-muted-foreground">
+        Samples every 250ms while running — gravity, restitution, object count, FPS. Saved locally
+        in this browser only.
+      </p>
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        <button
+          type="button"
+          onClick={onSave}
+          data-testid="journal-save"
+          className="inline-flex h-8 items-center rounded-md border border-accent bg-accent-soft px-2.5 text-xs font-medium text-accent"
+        >
+          Save current run
+        </button>
+        <button
+          type="button"
+          onClick={onClearSamples}
+          className="inline-flex h-8 items-center rounded-md border border-border bg-background px-2.5 text-xs text-muted-foreground hover:border-border-strong"
+        >
+          Clear buffer
+        </button>
+      </div>
+      <ul className="mt-3 max-h-40 space-y-1 overflow-auto">
+        {experiments.length === 0 ? (
+          <li className="text-xs text-subtle">No saved experiments yet.</li>
+        ) : (
+          experiments.map((exp) => (
+            <li
+              key={exp.id}
+              className="flex flex-wrap items-center justify-between gap-2 rounded-md border border-border bg-background/40 px-2 py-1.5"
+            >
+              <span className="mono text-[11px] text-foreground">{exp.name}</span>
+              <span className="mono text-[10px] text-subtle">
+                {exp.samples.length} pts · g={exp.gravity.toFixed(2)}
+              </span>
+              <span className="flex gap-1">
+                <button
+                  type="button"
+                  onClick={() => onExport(exp)}
+                  className="rounded border border-border px-2 py-0.5 text-[10px] text-muted-foreground hover:text-foreground"
+                >
+                  CSV
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onDelete(exp.id)}
+                  className="rounded border border-border px-2 py-0.5 text-[10px] text-muted-foreground hover:text-status"
+                >
+                  Delete
+                </button>
+              </span>
+            </li>
+          ))
+        )}
+      </ul>
+    </div>
   );
 }
 

@@ -1,0 +1,1 @@
+import{i as e,t}from"./react-DB-4Zxce.js";import{t as n}from"./jsx-runtime-BtH0gOTJ.js";var r=e(t(),1),i=n(),a=()=>!0,o=()=>!1;function s({children:e,fallback:t=null}){return(0,i.jsx)(r.Fragment,{children:c()?e:t})}function c(e=!0){return r.useSyncExternalStore(l,a,e?o:a)}function l(){return()=>{}}export{c as n,s as t};

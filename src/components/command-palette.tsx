@@ -81,6 +81,21 @@ export function CommandPalette({
               <Item onSelect={() => run(() => void navigate({ to: "/playground" }))}>
                 Physics Playground
               </Item>
+              <Item onSelect={() => run(() => void navigate({ to: "/instruments" }))}>
+                Instruments Lab
+              </Item>
+              <Item onSelect={() => run(() => void navigate({ to: "/instruments/qucpl" }))}>
+                QuCPL Lite
+              </Item>
+              <Item onSelect={() => run(() => void navigate({ to: "/instruments/chaos" }))}>
+                Chaos Lab
+              </Item>
+              <Item onSelect={() => run(() => void navigate({ to: "/systems" }))}>
+                Systems
+              </Item>
+              <Item onSelect={() => run(() => void navigate({ to: "/topology" }))}>
+                Project Topology
+              </Item>
               <Item onSelect={() => run(() => void navigate({ to: "/blog" }))}>
                 Blog
               </Item>
@@ -90,7 +105,7 @@ export function CommandPalette({
             </Group>
             <Group heading="Actions">
               <Item onSelect={() => run(() => toggleTheme())}>Toggle Theme</Item>
-              <Item onSelect={() => run(() => void navigate({ to: "/resume" }))}>
+              <Item onSelect={() => run(() => void navigate({ to: "/resume", search: { lens: "engineering" } }))}>
                 Download Resume
               </Item>
               {socials.map((s) => (

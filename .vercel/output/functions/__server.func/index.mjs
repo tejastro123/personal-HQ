@@ -13,7 +13,7 @@ var install_page_default = "<!DOCTYPE html>\n<html lang=\"en\" class=\"device-de
 //#region \0virtual:grok-og-identity
 var grokOgIdentity = { "site": {
 	"title": "Tejas — Physics × AI × Software",
-	"description": "Personal portfolio of Tejas exploring physics, quantum computing, AI, software, data, and space technology.",
+	"description": "Personal portfolio of Tejas — space & rocketry enthusiast, software developer, and BITS Pilani Hyderabad student exploring quantum computing, AI, data science, and building real systems.",
 	"card": "custom",
 	"color": "4C8DFF",
 	"image": "/og.jpg"

@@ -133,7 +133,7 @@ function LinkButton({ href, children }: { href: string; children: ReactNode }) {
     );
   if (href === "/resume")
     return (
-      <Link to="/resume" className={cls}>
+      <Link to="/resume" search={{ lens: "engineering" }} className={cls}>
         {children}
       </Link>
     );

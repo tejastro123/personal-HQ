@@ -13,12 +13,29 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as InstrumentsRouteImport } from './routes/instruments'
 import { Route as LinksRouteImport } from './routes/links'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as PlaygroundRouteImport } from './routes/playground'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ResumeRouteImport } from './routes/resume'
+import { Route as SystemsRouteImport } from './routes/systems'
+import { Route as TopologyRouteImport } from './routes/topology'
+import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as HqIndexRouteImport } from './routes/hq/index'
+import { Route as HqBlogRouteImport } from './routes/hq/blog'
+import { Route as HqHomeRouteImport } from './routes/hq/home'
+import { Route as HqMessagesRouteImport } from './routes/hq/messages'
+import { Route as HqProjectsRouteImport } from './routes/hq/projects'
+import { Route as HqResumeRouteImport } from './routes/hq/resume'
+import { Route as HqSiteRouteImport } from './routes/hq/site'
+import { Route as InstrumentsChaosRouteImport } from './routes/instruments/chaos'
+import { Route as InstrumentsOrbitRouteImport } from './routes/instruments/orbit'
+import { Route as InstrumentsParticlesRouteImport } from './routes/instruments/particles'
+import { Route as InstrumentsQucplRouteImport } from './routes/instruments/qucpl'
 import { Route as ProjectsIdRouteImport } from './routes/projects.$id'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,9 +57,19 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InstrumentsRoute = InstrumentsRouteImport.update({
+  id: '/instruments',
+  path: '/instruments',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LinksRoute = LinksRouteImport.update({
   id: '/links',
   path: '/links',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlaygroundRoute = PlaygroundRouteImport.update({
@@ -60,15 +87,90 @@ const ResumeRoute = ResumeRouteImport.update({
   path: '/resume',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SystemsRoute = SystemsRouteImport.update({
+  id: '/systems',
+  path: '/systems',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TopologyRoute = TopologyRouteImport.update({
+  id: '/topology',
+  path: '/topology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiHealthRoute = ApiHealthRouteImport.update({
+  id: '/api/health',
+  path: '/api/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const HqIndexRoute = HqIndexRouteImport.update({
+  id: '/hq/',
+  path: '/hq/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HqBlogRoute = HqBlogRouteImport.update({
+  id: '/hq/blog',
+  path: '/hq/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HqHomeRoute = HqHomeRouteImport.update({
+  id: '/hq/home',
+  path: '/hq/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HqMessagesRoute = HqMessagesRouteImport.update({
+  id: '/hq/messages',
+  path: '/hq/messages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HqProjectsRoute = HqProjectsRouteImport.update({
+  id: '/hq/projects',
+  path: '/hq/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HqResumeRoute = HqResumeRouteImport.update({
+  id: '/hq/resume',
+  path: '/hq/resume',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HqSiteRoute = HqSiteRouteImport.update({
+  id: '/hq/site',
+  path: '/hq/site',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstrumentsChaosRoute = InstrumentsChaosRouteImport.update({
+  id: '/chaos',
+  path: '/chaos',
+  getParentRoute: () => InstrumentsRoute,
+} as any)
+const InstrumentsOrbitRoute = InstrumentsOrbitRouteImport.update({
+  id: '/orbit',
+  path: '/orbit',
+  getParentRoute: () => InstrumentsRoute,
+} as any)
+const InstrumentsParticlesRoute = InstrumentsParticlesRouteImport.update({
+  id: '/particles',
+  path: '/particles',
+  getParentRoute: () => InstrumentsRoute,
+} as any)
+const InstrumentsQucplRoute = InstrumentsQucplRouteImport.update({
+  id: '/qucpl',
+  path: '/qucpl',
+  getParentRoute: () => InstrumentsRoute,
+} as any)
 const ProjectsIdRoute = ProjectsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => ProjectsRoute,
+} as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -76,24 +178,58 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/instruments': typeof InstrumentsRouteWithChildren
   '/links': typeof LinksRoute
+  '/login': typeof LoginRoute
   '/playground': typeof PlaygroundRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/resume': typeof ResumeRoute
+  '/systems': typeof SystemsRoute
+  '/topology': typeof TopologyRoute
+  '/api/health': typeof ApiHealthRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/hq/blog': typeof HqBlogRoute
+  '/hq/home': typeof HqHomeRoute
+  '/hq/messages': typeof HqMessagesRoute
+  '/hq/projects': typeof HqProjectsRoute
+  '/hq/resume': typeof HqResumeRoute
+  '/hq/site': typeof HqSiteRoute
+  '/instruments/chaos': typeof InstrumentsChaosRoute
+  '/instruments/orbit': typeof InstrumentsOrbitRoute
+  '/instruments/particles': typeof InstrumentsParticlesRoute
+  '/instruments/qucpl': typeof InstrumentsQucplRoute
   '/projects/$id': typeof ProjectsIdRoute
+  '/hq/': typeof HqIndexRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/instruments': typeof InstrumentsRouteWithChildren
   '/links': typeof LinksRoute
+  '/login': typeof LoginRoute
   '/playground': typeof PlaygroundRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/resume': typeof ResumeRoute
+  '/systems': typeof SystemsRoute
+  '/topology': typeof TopologyRoute
+  '/api/health': typeof ApiHealthRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/hq/blog': typeof HqBlogRoute
+  '/hq/home': typeof HqHomeRoute
+  '/hq/messages': typeof HqMessagesRoute
+  '/hq/projects': typeof HqProjectsRoute
+  '/hq/resume': typeof HqResumeRoute
+  '/hq/site': typeof HqSiteRoute
+  '/instruments/chaos': typeof InstrumentsChaosRoute
+  '/instruments/orbit': typeof InstrumentsOrbitRoute
+  '/instruments/particles': typeof InstrumentsParticlesRoute
+  '/instruments/qucpl': typeof InstrumentsQucplRoute
   '/projects/$id': typeof ProjectsIdRoute
+  '/hq': typeof HqIndexRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -101,12 +237,29 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/instruments': typeof InstrumentsRouteWithChildren
   '/links': typeof LinksRoute
+  '/login': typeof LoginRoute
   '/playground': typeof PlaygroundRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/resume': typeof ResumeRoute
+  '/systems': typeof SystemsRoute
+  '/topology': typeof TopologyRoute
+  '/api/health': typeof ApiHealthRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/hq/blog': typeof HqBlogRoute
+  '/hq/home': typeof HqHomeRoute
+  '/hq/messages': typeof HqMessagesRoute
+  '/hq/projects': typeof HqProjectsRoute
+  '/hq/resume': typeof HqResumeRoute
+  '/hq/site': typeof HqSiteRoute
+  '/instruments/chaos': typeof InstrumentsChaosRoute
+  '/instruments/orbit': typeof InstrumentsOrbitRoute
+  '/instruments/particles': typeof InstrumentsParticlesRoute
+  '/instruments/qucpl': typeof InstrumentsQucplRoute
   '/projects/$id': typeof ProjectsIdRoute
+  '/hq/': typeof HqIndexRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -115,36 +268,87 @@ export interface FileRouteTypes {
     | '/$'
     | '/blog'
     | '/contact'
+    | '/instruments'
     | '/links'
+    | '/login'
     | '/playground'
     | '/projects'
     | '/resume'
+    | '/systems'
+    | '/topology'
+    | '/api/health'
     | '/blog/$slug'
+    | '/hq/blog'
+    | '/hq/home'
+    | '/hq/messages'
+    | '/hq/projects'
+    | '/hq/resume'
+    | '/hq/site'
+    | '/instruments/chaos'
+    | '/instruments/orbit'
+    | '/instruments/particles'
+    | '/instruments/qucpl'
     | '/projects/$id'
+    | '/hq/'
+    | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/$'
     | '/blog'
     | '/contact'
+    | '/instruments'
     | '/links'
+    | '/login'
     | '/playground'
     | '/projects'
     | '/resume'
+    | '/systems'
+    | '/topology'
+    | '/api/health'
     | '/blog/$slug'
+    | '/hq/blog'
+    | '/hq/home'
+    | '/hq/messages'
+    | '/hq/projects'
+    | '/hq/resume'
+    | '/hq/site'
+    | '/instruments/chaos'
+    | '/instruments/orbit'
+    | '/instruments/particles'
+    | '/instruments/qucpl'
     | '/projects/$id'
+    | '/hq'
+    | '/api/auth/$'
   id:
     | '__root__'
     | '/'
     | '/$'
     | '/blog'
     | '/contact'
+    | '/instruments'
     | '/links'
+    | '/login'
     | '/playground'
     | '/projects'
     | '/resume'
+    | '/systems'
+    | '/topology'
+    | '/api/health'
     | '/blog/$slug'
+    | '/hq/blog'
+    | '/hq/home'
+    | '/hq/messages'
+    | '/hq/projects'
+    | '/hq/resume'
+    | '/hq/site'
+    | '/instruments/chaos'
+    | '/instruments/orbit'
+    | '/instruments/particles'
+    | '/instruments/qucpl'
     | '/projects/$id'
+    | '/hq/'
+    | '/api/auth/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -152,10 +356,23 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
+  InstrumentsRoute: typeof InstrumentsRouteWithChildren
   LinksRoute: typeof LinksRoute
+  LoginRoute: typeof LoginRoute
   PlaygroundRoute: typeof PlaygroundRoute
   ProjectsRoute: typeof ProjectsRouteWithChildren
   ResumeRoute: typeof ResumeRoute
+  SystemsRoute: typeof SystemsRoute
+  TopologyRoute: typeof TopologyRoute
+  ApiHealthRoute: typeof ApiHealthRoute
+  HqBlogRoute: typeof HqBlogRoute
+  HqHomeRoute: typeof HqHomeRoute
+  HqMessagesRoute: typeof HqMessagesRoute
+  HqProjectsRoute: typeof HqProjectsRoute
+  HqResumeRoute: typeof HqResumeRoute
+  HqSiteRoute: typeof HqSiteRoute
+  HqIndexRoute: typeof HqIndexRoute
+  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -188,11 +405,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/instruments': {
+      id: '/instruments'
+      path: '/instruments'
+      fullPath: '/instruments'
+      preLoaderRoute: typeof InstrumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/links': {
       id: '/links'
       path: '/links'
       fullPath: '/links'
       preLoaderRoute: typeof LinksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/playground': {
@@ -216,6 +447,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResumeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/systems': {
+      id: '/systems'
+      path: '/systems'
+      fullPath: '/systems'
+      preLoaderRoute: typeof SystemsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/topology': {
+      id: '/topology'
+      path: '/topology'
+      fullPath: '/topology'
+      preLoaderRoute: typeof TopologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/health': {
+      id: '/api/health'
+      path: '/api/health'
+      fullPath: '/api/health'
+      preLoaderRoute: typeof ApiHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
@@ -223,12 +475,96 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/hq/': {
+      id: '/hq/'
+      path: '/hq'
+      fullPath: '/hq/'
+      preLoaderRoute: typeof HqIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hq/blog': {
+      id: '/hq/blog'
+      path: '/hq/blog'
+      fullPath: '/hq/blog'
+      preLoaderRoute: typeof HqBlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hq/home': {
+      id: '/hq/home'
+      path: '/hq/home'
+      fullPath: '/hq/home'
+      preLoaderRoute: typeof HqHomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hq/messages': {
+      id: '/hq/messages'
+      path: '/hq/messages'
+      fullPath: '/hq/messages'
+      preLoaderRoute: typeof HqMessagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hq/projects': {
+      id: '/hq/projects'
+      path: '/hq/projects'
+      fullPath: '/hq/projects'
+      preLoaderRoute: typeof HqProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hq/resume': {
+      id: '/hq/resume'
+      path: '/hq/resume'
+      fullPath: '/hq/resume'
+      preLoaderRoute: typeof HqResumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hq/site': {
+      id: '/hq/site'
+      path: '/hq/site'
+      fullPath: '/hq/site'
+      preLoaderRoute: typeof HqSiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/instruments/chaos': {
+      id: '/instruments/chaos'
+      path: '/chaos'
+      fullPath: '/instruments/chaos'
+      preLoaderRoute: typeof InstrumentsChaosRouteImport
+      parentRoute: typeof InstrumentsRoute
+    }
+    '/instruments/orbit': {
+      id: '/instruments/orbit'
+      path: '/orbit'
+      fullPath: '/instruments/orbit'
+      preLoaderRoute: typeof InstrumentsOrbitRouteImport
+      parentRoute: typeof InstrumentsRoute
+    }
+    '/instruments/particles': {
+      id: '/instruments/particles'
+      path: '/particles'
+      fullPath: '/instruments/particles'
+      preLoaderRoute: typeof InstrumentsParticlesRouteImport
+      parentRoute: typeof InstrumentsRoute
+    }
+    '/instruments/qucpl': {
+      id: '/instruments/qucpl'
+      path: '/qucpl'
+      fullPath: '/instruments/qucpl'
+      preLoaderRoute: typeof InstrumentsQucplRouteImport
+      parentRoute: typeof InstrumentsRoute
+    }
     '/projects/$id': {
       id: '/projects/$id'
       path: '/$id'
       fullPath: '/projects/$id'
       preLoaderRoute: typeof ProjectsIdRouteImport
       parentRoute: typeof ProjectsRoute
+    }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -242,6 +578,24 @@ const BlogRouteChildren: BlogRouteChildren = {
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface InstrumentsRouteChildren {
+  InstrumentsChaosRoute: typeof InstrumentsChaosRoute
+  InstrumentsOrbitRoute: typeof InstrumentsOrbitRoute
+  InstrumentsParticlesRoute: typeof InstrumentsParticlesRoute
+  InstrumentsQucplRoute: typeof InstrumentsQucplRoute
+}
+
+const InstrumentsRouteChildren: InstrumentsRouteChildren = {
+  InstrumentsChaosRoute: InstrumentsChaosRoute,
+  InstrumentsOrbitRoute: InstrumentsOrbitRoute,
+  InstrumentsParticlesRoute: InstrumentsParticlesRoute,
+  InstrumentsQucplRoute: InstrumentsQucplRoute,
+}
+
+const InstrumentsRouteWithChildren = InstrumentsRoute._addFileChildren(
+  InstrumentsRouteChildren,
+)
 
 interface ProjectsRouteChildren {
   ProjectsIdRoute: typeof ProjectsIdRoute
@@ -260,10 +614,23 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
+  InstrumentsRoute: InstrumentsRouteWithChildren,
   LinksRoute: LinksRoute,
+  LoginRoute: LoginRoute,
   PlaygroundRoute: PlaygroundRoute,
   ProjectsRoute: ProjectsRouteWithChildren,
   ResumeRoute: ResumeRoute,
+  SystemsRoute: SystemsRoute,
+  TopologyRoute: TopologyRoute,
+  ApiHealthRoute: ApiHealthRoute,
+  HqBlogRoute: HqBlogRoute,
+  HqHomeRoute: HqHomeRoute,
+  HqMessagesRoute: HqMessagesRoute,
+  HqProjectsRoute: HqProjectsRoute,
+  HqResumeRoute: HqResumeRoute,
+  HqSiteRoute: HqSiteRoute,
+  HqIndexRoute: HqIndexRoute,
+  ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
